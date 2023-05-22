@@ -1,4 +1,4 @@
-library(ggplot2)
+library(ggplot2).
 library(tidyverse)
 
 
@@ -12,6 +12,9 @@ order_conditions = function(dat){
                                                     "High Iron", "No Vit.Min.",
                                                     "Control", "Stagnant")))
 }
+
+
+
 
 
 # chitin ------------------------------------------------------------------
@@ -41,18 +44,18 @@ co2_chitin_samples =
   order_conditions()
   # remove outliers
   # we know that the outliers are Control-C and 30C-A
- # filter(!(Condition %in% "Control" & Replicate %in% "C")) |> 
-  #filter(!(Condition %in% "30C" & Replicate %in% "A"))
+filter(!(Condition %in% "NoVit.Min" & Replicate %in% "B")) |> 
+  filter(!(Condition %in% "30C" & Replicate %in% "A"))
 
 gg_co2_chitin_no_corr <- 
-  co2_chitin_samples |> 
-  ggplot(aes(x = Hours, y = CO2_ppm, fill = Condition))+
+  ggplot(co2_chitin_samples |> filter(Replicate != "blank"), 
+         aes(x = Hours, y = CO2_ppm, fill = Condition))+
   stat_summary(geom = "bar", position = "dodge")+
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
   #  geom_bar(stat = "identity", position = position_dodge())+
   expand_limits(x = 0)+
   scale_y_continuous(labels = scales::comma)+
-  labs(title = "Chitin - CO2",
+  labs(title = "chitin - CO2",
        subtitle = "not blank-corrected")+
   scale_fill_brewer(palette = "Paired")
 
@@ -103,11 +106,11 @@ nova_chitin_samples =
   filter(!(Condition %in% "30C" & Replicate %in% "A"))
 
 
-gg_nova_chitin_no_corr <- 
-  nova_chitin_samples |> 
+gg_nova_Chitin_no_corr <- 
+  nova_Chitin_samples |> 
   ggplot(aes(x = Time_hr, 
-           y = Absorbance, fill = Condition,
-           group = Condition))+
+             y = Absorbance, fill = Condition,
+             group = Condition))+
   stat_summary(geom = "bar", position = "dodge")+
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
   labs(title = "Chitin - NovaCyte",
@@ -169,7 +172,7 @@ co2_nag_samples =
 
 gg_co2_nag_no_corr <- 
   ggplot(co2_nag_samples |> filter(Replicate != "blank"), 
-       aes(x = Hours, y = CO2_ppm, fill = Condition))+
+         aes(x = Hours, y = CO2_ppm, fill = Condition))+
   stat_summary(geom = "bar", position = "dodge")+
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
   #  geom_bar(stat = "identity", position = position_dodge())+
@@ -227,6 +230,7 @@ gg_nova_nag_no_corr <-
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
   labs(title = "NAG - NovaCyte",
        subtitle = "not blank-corrected")+
+  labs(x = "Hours", y = "Cell counts")+
   scale_y_continuous(labels = scales::comma)+
   scale_fill_brewer(palette = "Paired")
 
@@ -275,7 +279,7 @@ gg_nova_chitin_bl_corr + gg_nova_nag_bl_corr +
 # Trehalose ------------------------------------------------------------------
 ## CO2 Tre----
 
-co2_Trehalose <- read.csv("Trehalose_CO2_condition_EXP_MG.csv")
+co2_Trehalose <- read.csv("Trehalose_CO2_20221210.csv")
 
 co2_Trehalose_processed <- 
   co2_Trehalose|>
@@ -299,21 +303,22 @@ co2_Trehalose_samples =
 
   # remove outliers
   # we know that the outliers are Control-C and 30C-A
- # filter(!(Condition %in% "Control" & Replicate %in% "C")) |> 
- # filter(!(Condition %in% "30C" & Replicate %in% "A"))
+ filter(!(Condition %in% "Control" & Replicate %in% "B")) |> 
+  filter(!(Condition %in% "pH6" & Replicate %in% "C"))
 
-gg_co2_Trehalose_no_corr <- 
-  co2_Trehalose_samples |> 
-  ggplot(aes(x = as.factor(Hours), y = CO2_ppm, fill = Condition))+
-  stat_summary(geom = "bar", position = "dodge")+
-  stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
-  #  geom_bar(stat = "identity", position = position_dodge())+
-  expand_limits(x = 0)+
-  scale_y_log10(labels = scales::comma)+
-  labs(title = "Trehalose - CO2",
-       subtitle = "not blank-corrected")+
-  scale_fill_brewer(palette = "Paired")
 
+ gg_co2_Trehalose_no_corr <- 
+   ggplot(co2_Trehalose_samples |> filter(Replicate != "blank"), 
+          aes(x = Hours, y = CO2_ppm, fill = Condition))+
+   stat_summary(geom = "bar", position = "dodge")+
+   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
+   #  geom_bar(stat = "identity", position = position_dodge())+
+   expand_limits(x = 0)+
+   scale_y_continuous(labels = scales::comma)+
+   labs(title = "Trehalose - CO2",
+        subtitle = "not blank-corrected")+
+   scale_fill_brewer(palette = "Paired")
+ 
 
 gg_co2_Trehalose_bl_corr <- 
   co2_Trehalose_samples |> 
@@ -405,7 +410,7 @@ gg_nova_Trehalose_bl_corr + gg_nova_Trehalose_bl_corr +
 
 # Carboxymethylcellulose ------------------------------------------------
 ## C02 CMC----
-co2_CMC <- read.csv("CMC_Condition_CO2_R.EXP.csv")
+co2_CMC <- read.csv("CMC_CO2_20230417.csv")
 
 co2_CMC_processed <- 
   co2_CMC|>
@@ -427,15 +432,21 @@ co2_CMC_samples =
   left_join(co2_CMC_blanks) |> 
   mutate(CO2_bl_corrected_ppm = CO2_ppm - blank_ppm)
 
+# remove outliers
+# we know that the outliers are No Vit.Min-A and 15C-A
+filter(!(Condition %in% "No Vit.Min" & Replicate %in% "A")) |> 
+  filter(!(Condition %in% "15C" & Replicate %in% "A"))
+
+
 
 gg_co2_CMC_no_corr <- 
-  co2_CMC_samples |> 
-  ggplot(aes(x = as.factor(Hours), y = CO2_ppm, fill = Condition))+
+  ggplot(co2_CMC_samples |> filter(Replicate != "blank"), 
+         aes(x = Hours, y = CO2_ppm, fill = Condition))+
   stat_summary(geom = "bar", position = "dodge")+
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
   #  geom_bar(stat = "identity", position = position_dodge())+
   expand_limits(x = 0)+
-  scale_y_log10(labels = scales::comma)+
+  scale_y_continuous(labels = scales::comma)+
   labs(title = "CMC - CO2",
        subtitle = "not blank-corrected")+
   scale_fill_brewer(palette = "Paired")
@@ -454,7 +465,7 @@ gg_co2_CMC_bl_corr <-
 
 ## Novacyte CMC----
 
-nova_CMC <- read.csv("CMC_conditions_Nova_counts_April_23.csv")
+nova_CMC <- read.csv("CMC_novacyte_20230417.csv")
 
 nova_CMC_processed = 
   nova_CMC |> 
@@ -494,6 +505,7 @@ gg_nova_CMC_no_corr <-
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
   labs(title = "CMC - NovaCyte",
        subtitle = "not blank-corrected")+
+  labs(x = "Hours", y = "Cell counts")
   scale_y_continuous(labels = scales::comma)+
   scale_fill_brewer(palette = "Paired")
 
