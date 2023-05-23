@@ -20,21 +20,26 @@ order_conditions = function(dat){
 # import files --------------------------------------------------------------
 import_nova_files <- function(FILEPATH){
   
-  list.files(path=FILEPATH, pattern = c("nova", ".csv"), full.names = TRUE) %>% 
-  lapply(read_csv, id = "source") %>% 
-  bind_rows()
-
+  filepaths = list.files(path=FILEPATH, pattern = c("nova", ".csv"), full.names = TRUE)
+  do.call(bind_rows, lapply(filepaths, function(path){
+    df <- read_csv(path) %>% 
+      mutate(source = basename(path))
+    df
+  }))
 }
 import_co2_files <- function(FILEPATH){
   
-  list.files(path=FILEPATH, pattern = c("CO2", ".csv"), full.names = TRUE) %>% 
-    lapply(read_csv, id = "source") %>% 
-    bind_rows()
+  filepaths = list.files(path=FILEPATH, pattern = c("CO2", ".csv"), full.names = TRUE)
+  do.call(bind_rows, lapply(filepaths, function(path){
+    df <- read_csv(path) %>% 
+      mutate(source = basename(path))
+    df
+  }))
   
 }
 
-data_nova <- import_nova_files(FILEPATH = "1-data//nova_co2") %>% janitor::clean_names()
-data_co2 <- import_co2_files(FILEPATH = "1-data//nova_co2") %>% janitor::clean_names()
+data_nova <- import_nova_files(FILEPATH = "1-data/nova_co2") %>% janitor::clean_names()
+data_co2 <- import_co2_files(FILEPATH = "1-data/nova_co2") %>% janitor::clean_names()
 
 #
 
