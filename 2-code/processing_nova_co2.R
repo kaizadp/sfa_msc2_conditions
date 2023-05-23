@@ -160,19 +160,30 @@ nova_samples =
   ### filter(!(Condition %in% "30C" & Replicate %in% "A")) %>% 
   force()
 
-
-gg_nova_no_corr <- 
+plot_nova = function(nova_samples){
+#gg_nova_no_corr <- 
   nova_samples |> 
   ggplot(aes(x = Hours, 
              y = Absorbance, fill = Condition,
              group = Condition))+
   stat_summary(geom = "bar", position = "dodge")+
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
-  labs(title = "Chitin - NovaCyte",
-       subtitle = "not blank-corrected")+
+  # if you want to plot the actual data points, use this line below: 
+  # geom_point(color = "black", position = position_dodge(width = 0.9))+
+  labs(title = "NovaCyte",
+       subtitle = "not blank-corrected",
+       x = "Time, hours",
+       y = "Cell counts")+
   scale_y_continuous(labels = scales::comma)+
   scale_fill_brewer(palette = "Paired")+
   facet_wrap(~substrate+date_run, scales = "free")
+}
+
+gg_nova_all = plot_nova(nova_samples)
+gg_nova_chitin = plot_nova(nova_samples %>% filter(substrate == "Chitin"))
+gg_nova_CMC = plot_nova(nova_samples %>% filter(substrate == "CMC"))
+gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
+gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
 
 
 gg_nova_blanks_only <- 
