@@ -80,7 +80,8 @@ plot_co2 = function(co2_samples){
     ggplot(aes(x = Hours, y = co2_ppm, fill = Condition))+
     stat_summary(geom = "bar", position = "dodge")+
     stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
-    #  geom_bar(stat = "identity", position = position_dodge())+
+    # if you want to plot the actual data points, use this line below: 
+    # geom_point(color = "black", position = position_dodge(width = 0.9))+
     expand_limits(x = 0)+
     scale_y_continuous(labels = scales::comma)+
     facet_wrap(~substrate+date_run, scales = "free")+
@@ -88,7 +89,9 @@ plot_co2 = function(co2_samples){
          subtitle = "not blank-corrected",
          x = "Time, hours",
          y = "CO2, ppm")+
-    scale_fill_brewer(palette = "Paired")
+    scale_fill_brewer(palette = "Paired")+
+    scale_color_brewer(palette = "Paired")
+  
 }
 
 # now, plot
