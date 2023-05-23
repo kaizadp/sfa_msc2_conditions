@@ -103,17 +103,17 @@ gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
 
 
 
-#gg_co2_chitin_bl_corr <- 
-co2_samples |> 
-  ggplot(aes(x = as.character(Hours), y = CO2_bl_corrected_ppm, fill = Condition))+
-  stat_summary(geom = "bar", position = "dodge")+
-  #  geom_bar(stat = "identity", position = position_dodge())+
-  expand_limits(x = 0)+
-  scale_y_continuous(labels = scales::comma)+
-  facet_wrap(~source, scales = "free")+
-  labs(title = "Chitin - CO2",
-       subtitle = "blank-corrected")+
-  scale_fill_brewer(palette = "Paired")
+### #gg_co2_chitin_bl_corr <- 
+### co2_samples |> 
+###   ggplot(aes(x = as.character(Hours), y = CO2_bl_corrected_ppm, fill = Condition))+
+###   stat_summary(geom = "bar", position = "dodge")+
+###   #  geom_bar(stat = "identity", position = position_dodge())+
+###   expand_limits(x = 0)+
+###   scale_y_continuous(labels = scales::comma)+
+###   facet_wrap(~source, scales = "free")+
+###   labs(title = "Chitin - CO2",
+###        subtitle = "blank-corrected")+
+###   scale_fill_brewer(palette = "Paired")
 
 
 #
