@@ -50,8 +50,15 @@ co2_processed <-
   rename(Time_hr = hrs_of_samples) |> 
   separate(name, sep = "_", into = c("Condition", "Replicate"), remove = FALSE) |> 
   separate(Time_hr, sep = ":", into = c("Hours")) |> 
-  mutate(Replicate = if_else(Replicate == "D", "blank", Replicate),
-         Hours = as.numeric(Hours)) 
+  separate(source, sep = "_", into = "substrate", remove = FALSE) %>% 
+  mutate(date_run = str_extract(source, "[0-9]{8}"),
+         date_run = lubridate::ymd(date_run),
+         Replicate = if_else(Replicate == "D", "blank", Replicate),
+         Hours = as.factor(Hours),
+         Hours_num = as.numeric(Hours),
+         Hours = fct_reorder(Hours, Hours_num)
+         #Hours = str_sort(Hours, numeric = TRUE)
+         )
 
 co2_blanks = 
   co2_processed |> 
@@ -66,18 +73,32 @@ co2_samples =
   mutate(CO2_bl_corrected_ppm = co2_ppm - blank_ppm) |> 
   order_conditions()
 
-#gg_co2_chitin_no_corr <- 
-co2_samples |> 
-  ggplot(aes(x = as.character(Hours), y = co2_ppm, fill = Condition))+
-  stat_summary(geom = "bar", position = "dodge")+
-  stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
-  #  geom_bar(stat = "identity", position = position_dodge())+
-  expand_limits(x = 0)+
-  scale_y_continuous(labels = scales::comma)+
-  facet_wrap(~source, scales = "free")+
-  labs(title = "Chitin - CO2",
-       subtitle = "not blank-corrected")+
-  scale_fill_brewer(palette = "Paired")
+# create function for CO2 graphs
+plot_co2 = function(co2_samples){
+  #gg_co2_chitin_no_corr <- 
+  co2_samples |> 
+    ggplot(aes(x = Hours, y = co2_ppm, fill = Condition))+
+    stat_summary(geom = "bar", position = "dodge")+
+    stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
+    #  geom_bar(stat = "identity", position = position_dodge())+
+    expand_limits(x = 0)+
+    scale_y_continuous(labels = scales::comma)+
+    facet_wrap(~substrate+date_run, scales = "free")+
+    labs(title = "CO2",
+         subtitle = "not blank-corrected",
+         x = "Time, hours",
+         y = "CO2, ppm")+
+    scale_fill_brewer(palette = "Paired")
+}
+
+# now, plot
+gg_co2_all = plot_co2(co2_samples)
+gg_co2_chitin = plot_co2(co2_samples %>% filter(substrate == "Chitin"))
+gg_co2_CMC = plot_co2(co2_samples %>% filter(substrate == "CMC"))
+gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG"))
+gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
+
+
 
 #gg_co2_chitin_bl_corr <- 
 co2_samples |> 
