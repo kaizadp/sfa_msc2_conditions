@@ -103,17 +103,17 @@ gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
 
 
 
-#gg_co2_chitin_bl_corr <- 
-co2_samples |> 
-  ggplot(aes(x = as.character(Hours), y = CO2_bl_corrected_ppm, fill = Condition))+
-  stat_summary(geom = "bar", position = "dodge")+
-  #  geom_bar(stat = "identity", position = position_dodge())+
-  expand_limits(x = 0)+
-  scale_y_continuous(labels = scales::comma)+
-  facet_wrap(~source, scales = "free")+
-  labs(title = "Chitin - CO2",
-       subtitle = "blank-corrected")+
-  scale_fill_brewer(palette = "Paired")
+### #gg_co2_chitin_bl_corr <- 
+### co2_samples |> 
+###   ggplot(aes(x = as.character(Hours), y = CO2_bl_corrected_ppm, fill = Condition))+
+###   stat_summary(geom = "bar", position = "dodge")+
+###   #  geom_bar(stat = "identity", position = position_dodge())+
+###   expand_limits(x = 0)+
+###   scale_y_continuous(labels = scales::comma)+
+###   facet_wrap(~source, scales = "free")+
+###   labs(title = "Chitin - CO2",
+###        subtitle = "blank-corrected")+
+###   scale_fill_brewer(palette = "Paired")
 
 
 #
@@ -125,7 +125,18 @@ nova_processed =
   separate(sample, sep = "_", into = c("Condition", "Replicate"), remove = FALSE) |> 
   mutate(Replicate = if_else(Replicate == "D", "blank", Replicate)) |> 
   rename(Absorbance = all_abs_count) |> 
-  dplyr::select(source, Condition, Replicate, Absorbance, Time_hr)
+  dplyr::select(source, Condition, Replicate, Absorbance, Time_hr) %>% 
+  rename(Hours = Time_hr) %>% 
+  separate(source, sep = "_", into = "substrate", remove = FALSE) %>% 
+  mutate(date_run = str_extract(source, "[0-9]{8}"),
+         date_run = lubridate::ymd(date_run),
+         Replicate = if_else(Replicate == "D", "blank", Replicate),
+         Hours = as.factor(Hours),
+         Hours_num = as.numeric(Hours),
+         Hours = fct_reorder(Hours, Hours_num)
+         #Hours = str_sort(Hours, numeric = TRUE)
+  )
+
 
 nova_blank = 
   nova_processed |> 
@@ -152,7 +163,7 @@ nova_samples =
 
 gg_nova_no_corr <- 
   nova_samples |> 
-  ggplot(aes(x = Time_hr, 
+  ggplot(aes(x = Hours, 
              y = Absorbance, fill = Condition,
              group = Condition))+
   stat_summary(geom = "bar", position = "dodge")+
@@ -161,7 +172,7 @@ gg_nova_no_corr <-
        subtitle = "not blank-corrected")+
   scale_y_continuous(labels = scales::comma)+
   scale_fill_brewer(palette = "Paired")+
-  facet_wrap(~source, scales = "free")
+  facet_wrap(~substrate+date_run, scales = "free")
 
 
 gg_nova_blanks_only <- 
