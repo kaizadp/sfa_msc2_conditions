@@ -186,26 +186,4 @@ gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
 gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
 
 
-gg_nova_blanks_only <- 
-  nova_summary |> 
-  ggplot(aes(x = Time_hr, 
-             y = Blank, fill = Condition))+
-  geom_bar(stat = "identity", position = position_dodge())+
-  labs(title = "Chitin - NovaCyte",
-       subtitle = "blanks only")+
-  scale_y_continuous(labels = scales::comma)+
-  scale_fill_brewer(palette = "Paired")
-
-gg_nova_chitin_bl_corr <- 
-  nova_chitin_summary |> 
-  filter(!Time_hr %in% c(24, 48)) |> 
-  ggplot(aes(x = Time_hr, 
-             y = Absorbance_bl_corrected, fill = Condition))+
-  geom_bar(stat = "identity", position = position_dodge())+
-  labs(title = "Chitin - NovaCyte",
-       subtitle = "blank-corrected")+
-  scale_y_continuous(labels = scales::comma)+
-  scale_fill_brewer(palette = "Paired")
-
-
 
