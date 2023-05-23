@@ -92,7 +92,10 @@ plot_co2 = function(co2_samples){
          x = "Time, hours",
          y = "CO2, ppm")+
     scale_fill_brewer(palette = "Paired")+
-    scale_color_brewer(palette = "Paired")
+    scale_color_brewer(palette = "Paired")+
+    theme(axis.title = element_text(size = 14),
+          axis.text = element_text(size = 14),
+          strip.text = element_text(size = 14))
   
 }
 
@@ -180,7 +183,10 @@ plot_nova = function(nova_samples){
        y = "Cell counts")+
   scale_y_continuous(labels = scales::comma)+
   scale_fill_brewer(palette = "Paired")+
-  facet_wrap(~substrate+date_run, scales = "free")
+  facet_wrap(~substrate+date_run, scales = "free")+
+    theme(axis.title = element_text(size = 14),
+          axis.text = element_text(size = 14),
+          strip.text = element_text(size = 14))
 }
 
 gg_nova_all = plot_nova(nova_samples)
@@ -188,3 +194,4 @@ gg_nova_chitin = plot_nova(nova_samples %>% filter(substrate == "Chitin"))
 gg_nova_CMC = plot_nova(nova_samples %>% filter(substrate == "CMC"))
 gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
 gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
+
