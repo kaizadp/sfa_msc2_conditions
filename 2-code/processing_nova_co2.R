@@ -54,6 +54,7 @@ co2_processed <-
   mutate(date_run = str_extract(source, "[0-9]{8}"),
          date_run = lubridate::ymd(date_run),
          Replicate = if_else(Replicate == "D", "blank", Replicate),
+         Hours = as.numeric(Hours),
          Hours = as.factor(Hours),
          Hours_num = as.numeric(Hours),
          Hours = fct_reorder(Hours, Hours_num)
@@ -73,6 +74,7 @@ co2_samples =
   mutate(CO2_bl_corrected_ppm = co2_ppm - blank_ppm) |> 
   order_conditions()
 
+# plot CO2 data ----
 # create function for CO2 graphs
 plot_co2 = function(co2_samples){
   #gg_co2_chitin_no_corr <- 
@@ -160,6 +162,8 @@ nova_samples =
   ### filter(!(Condition %in% "30C" & Replicate %in% "A")) %>% 
   force()
 
+#
+# plot Novacyte data ----
 plot_nova = function(nova_samples){
 #gg_nova_no_corr <- 
   nova_samples |> 
@@ -184,6 +188,3 @@ gg_nova_chitin = plot_nova(nova_samples %>% filter(substrate == "Chitin"))
 gg_nova_CMC = plot_nova(nova_samples %>% filter(substrate == "CMC"))
 gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
 gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
-
-
-
