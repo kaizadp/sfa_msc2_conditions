@@ -72,7 +72,9 @@ co2_samples =
   filter(!Replicate %in% "blank") |> 
   left_join(co2_blanks) |> 
   mutate(CO2_bl_corrected_ppm = co2_ppm - blank_ppm) |> 
-  order_conditions()
+  order_conditions() %>% 
+  #filter(!Condition %in% "15C") %>%  # removes all 15C
+  filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC")))
 
 # plot CO2 data ----
 # create function for CO2 graphs
@@ -88,7 +90,7 @@ plot_co2 = function(co2_samples){
     scale_y_continuous(labels = scales::comma)+
     facet_wrap(~substrate+date_run, scales = "free")+
     labs(title = "CO2",
-         subtitle = "not blank-corrected",
+         subtitle = "Figure 1",
          x = "Time, hours",
          y = "CO2, ppm")+
     scale_fill_brewer(palette = "Paired")+
@@ -106,6 +108,7 @@ gg_co2_CMC = plot_co2(co2_samples %>% filter(substrate == "CMC"))
 gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG"))
 gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
 
+gg_co2_all
 
 
 ### #gg_co2_chitin_bl_corr <- 
@@ -163,7 +166,9 @@ nova_samples =
   # we know that the outliers are Control-C and 30C-A
   ###  filter(!(Condition %in% "Control" & Replicate %in% "C")) |> 
   ### filter(!(Condition %in% "30C" & Replicate %in% "A")) %>% 
-  force()
+  #filter(!Condition %in% "15C") %>%  # removes all 15C
+  filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC")))
+  
 
 #
 # plot Novacyte data ----
@@ -195,3 +200,9 @@ gg_nova_CMC = plot_nova(nova_samples %>% filter(substrate == "CMC"))
 gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
 gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
 
+
+gg_nova_all
+gg_nova_CMC
+gg_co2_CMC
+gg_nova_chitin
+gg_co2_chitin
