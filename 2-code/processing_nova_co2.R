@@ -101,7 +101,7 @@ plot_co2 = function(co2_samples){
     # geom_point(color = "black", position = position_dodge(width = 0.9))+
     expand_limits(x = 0)+
     scale_y_continuous(labels = scales::comma)+
-    facet_wrap(~substrate+date_run, scales = "free")+
+    facet_wrap(~substrate, scales = "free")+
     labs(title = "CO2",
          subtitle = "Figure 1",
          x = "Time, hours",
@@ -181,8 +181,8 @@ nova_samples =
   ###  filter(!(Condition %in% "Control" & Replicate %in% "C")) |> 
   ### filter(!(Condition %in% "30C" & Replicate %in% "A")) %>% 
   #filter(!Condition %in% "15C") %>%  # removes all 15C
-  filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC")))
-  
+  # filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC")))
+  force()
 
 #
 # plot Novacyte data ----
@@ -202,7 +202,7 @@ plot_nova = function(nova_samples){
        y = "Cell counts")+
   scale_y_continuous(labels = scales::comma)+
   scale_fill_brewer(palette = "Paired")+
-  facet_wrap(~substrate+date_run, scales = "free")+
+  facet_wrap(~substrate, scales = "free")+
     theme(axis.title = element_text(size = 14),
           axis.text = element_text(size = 14),
           strip.text = element_text(size = 14))
