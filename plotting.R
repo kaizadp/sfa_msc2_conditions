@@ -24,6 +24,7 @@ co2_summary %>%
   theme_bw()+
   theme(panel.grid = element_blank())
 #  guides(fill = guide_legend(override.aes = list(alpha=0.9)))
+#ggsave("3-images/figures_2023-10-20/co2_heatmap_summary.png", height = 5, width = 17)
 
 
 # plot only 94, 163 hr
@@ -57,12 +58,12 @@ co2_summary_full =
 
 co2_summary_full_wide = 
   co2_summary_full %>% 
-  dplyr::select(Condition_x, Condition_y, percent_change) %>% 
+  dplyr::select(substrate, Hours, Condition_x, Condition_y, percent_change) %>% 
   pivot_wider(names_from = "Condition_y", values_from = "percent_change")
 
 co2_summary_full %>% 
   mutate(percent_change = round(percent_change)) %>% 
-  filter(Hours == "94") %>% 
+  filter(Hours == "96") %>% 
   ggplot(aes(x = Condition_x, y = Condition_y,
              fill = percent_change))+
   geom_tile()+
@@ -73,13 +74,14 @@ co2_summary_full %>%
        y = "Reference condition",
        fill = "% change in CO2",
        title = "CO2 - comparisons",
-       subtitle = "94 hours",
+       subtitle = "96 hours",
        caption = "colors represent percent change of a given condition compared to the reference. 
        + values indicate an increase, 
        - values indicate a decrease")+
   facet_wrap(~substrate)+
   theme_bw()+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+#ggsave("3-images/figures_2023-10-20/co2_heatmap_comparisons.png")
 
 
 #
@@ -107,6 +109,7 @@ nova_summary %>%
   theme_bw()+
   theme(panel.grid = element_blank())
 #  guides(fill = guide_legend(override.aes = list(alpha=0.9)))
+#ggsave("3-images/figures_2023-10-20/nova_heatmap_summary.png", height = 5, width = 18)
 
 
 # plot only 94, 163 hr
@@ -140,7 +143,7 @@ nova_summary_full =
 
 nova_summary_full_wide = 
   nova_summary_full %>% 
-  dplyr::select(Condition_x, Condition_y, percent_change) %>% 
+  dplyr::select(substrate, Hours, Condition_x, Condition_y, percent_change) %>% 
   pivot_wider(names_from = "Condition_y", values_from = "percent_change")
 
 nova_summary_full %>% 
@@ -163,6 +166,7 @@ nova_summary_full %>%
   facet_wrap(~substrate)+
   theme_bw()+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+#ggsave("3-images/figures_2023-10-20/nova_heatmap_comparisons.png")
 
 
 #
