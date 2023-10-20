@@ -16,9 +16,10 @@ order_conditions = function(dat){
 align_hours = function(dat){
   dat %>% 
     mutate(Hours = case_match(Hours, 
-                              "21" ~ "24", "46" ~ "48",
+                              "21" ~ "24", "45" ~ "48", "46" ~ "48",
                               "68" ~ "72", "94" ~ "96",
-                              "115" ~ "120", "141" ~ "144", 
+                              "115" ~ "120", "119" ~ "120",
+                              "139" ~ "144", "141" ~ "144", 
                               "163" ~ "168",
                               .default = Hours))
   
@@ -85,7 +86,8 @@ co2_samples =
   mutate(CO2_bl_corrected_ppm = co2_ppm - blank_ppm) |> 
   order_conditions() %>% 
   #filter(!Condition %in% "15C") %>%  # removes all 15C
-  filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC")))
+  #filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC"))) %>% 
+  force()
 
 # plot CO2 data ----
 # create function for CO2 graphs
