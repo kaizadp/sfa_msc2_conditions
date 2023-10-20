@@ -13,7 +13,16 @@ order_conditions = function(dat){
                                                     "High Iron", "No Vit.Min.",
                                                     "Control", "Stagnant")))
 }
-
+align_hours = function(dat){
+  dat %>% 
+    mutate(Hours = case_match(Hours, 
+                              "21" ~ "24", "46" ~ "48",
+                              "68" ~ "72", "94" ~ "96",
+                              "115" ~ "120", "141" ~ "144", 
+                              "163" ~ "168",
+                              .default = Hours))
+  
+}
 
 #
 
@@ -56,10 +65,12 @@ co2_processed <-
          Replicate = if_else(Replicate == "D", "blank", Replicate),
          Hours = as.numeric(Hours),
          Hours = as.factor(Hours),
-         Hours_num = as.numeric(Hours),
-         Hours = fct_reorder(Hours, Hours_num)
+         #Hours = case_match(Hours, "45" ~ "46", "115" ~ "119", "141" ~ "139", .default = Hours),
          #Hours = str_sort(Hours, numeric = TRUE)
-         )
+  ) %>% 
+  align_hours() %>% 
+  mutate(Hours_num = as.numeric(Hours),
+         Hours = fct_reorder(Hours, Hours_num))
 
 co2_blanks = 
   co2_processed |> 
@@ -140,10 +151,11 @@ nova_processed =
          date_run = lubridate::ymd(date_run),
          Replicate = if_else(Replicate == "D", "blank", Replicate),
          Hours = as.factor(Hours),
-         Hours_num = as.numeric(Hours),
-         Hours = fct_reorder(Hours, Hours_num)
          #Hours = str_sort(Hours, numeric = TRUE)
-  )
+  ) %>% 
+  # align_hours() %>% 
+  mutate(Hours_num = as.numeric(Hours),
+         Hours = fct_reorder(Hours, Hours_num))
 
 
 nova_blank = 
