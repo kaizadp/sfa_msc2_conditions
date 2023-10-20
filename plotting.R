@@ -169,3 +169,35 @@ nova_summary_full %>%
 # NOVACYTE 
 
 
+
+#
+# combined CO2 and Nova ----
+# 
+combined = 
+  co2_summary %>%  
+  left_join(nova_summary)
+
+# plot CO2 vs. nova
+combined %>% 
+  ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
+  geom_point(size = 3)+
+  geom_path(aes(group = Condition))+
+  facet_wrap(~substrate+Condition)
+#ggsave("3-images/figures_2023-10-20/co2_vs_nova_all.png")
+
+combined %>% 
+  filter(substrate %in% c("CMC", "Chitin")) %>% 
+  ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
+  geom_point(size = 3)+ 
+  geom_path(aes(group = Condition))+
+  facet_wrap(~substrate+Condition)
+#ggsave("3-images/figures_2023-10-20/co2_vs_nova_cmc_chitin.png")
+
+combined %>% 
+  filter(!substrate %in% c("CMC", "Chitin")) %>% 
+  ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
+  geom_point(size = 3)+
+  geom_path(aes(group = Condition))+
+  facet_wrap(~substrate+Condition)+
+  theme_bw()
+#ggsave("3-images/figures_2023-10-20/co2_vs_nova_nag_treh.png")
