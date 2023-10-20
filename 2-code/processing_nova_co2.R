@@ -2,6 +2,7 @@
 
 # 1. load packages --------------------------------------------------------
 library(tidyverse)
+theme_set(theme_bw())
 
 # setup -------------------------------------------------------------------
 
@@ -116,6 +117,7 @@ plot_co2 = function(co2_samples){
 
 # now, plot
 gg_co2_all = plot_co2(co2_samples)
+#ggsave("3-images/figures_2023-10-20/co2_bar.png", width = 14, height = 10)
 gg_co2_chitin = plot_co2(co2_samples %>% filter(substrate == "Chitin"))
 gg_co2_CMC = plot_co2(co2_samples %>% filter(substrate == "CMC"))
 gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG"))
@@ -209,6 +211,7 @@ plot_nova = function(nova_samples){
 }
 
 gg_nova_all = plot_nova(nova_samples)
+#ggsave("3-images/figures_2023-10-20/nova_bar.png", width = 14, height = 10)
 gg_nova_chitin = plot_nova(nova_samples %>% filter(substrate == "Chitin"))
 gg_nova_CMC = plot_nova(nova_samples %>% filter(substrate == "CMC"))
 gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
