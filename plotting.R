@@ -186,7 +186,20 @@ combined %>%
   ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
   geom_point(size = 3)+
   geom_path(aes(group = Condition))+
-  facet_wrap(~substrate+Condition)
+  labs(x ="Cell counts",
+       y = "CO2 (ppm)",
+       title = "CO2 Vs Biomass",
+      # subtitle = "",
+       caption = "all substrates resperation and biomass Correlation")+
+  facet_wrap(~substrate+Condition)+
+  theme(axis.title = element_text(size = 14),
+        axis.text = element_text(size = 14),
+        strip.text = element_text(size = 14))+
+  theme(legend.key.size = unit(0.5, 'cm'), #change legend key size
+       legend.key.height = unit(1, 'cm'), #change legend key height
+        legend.key.width = unit(1, 'cm'), #change legend key width
+        legend.title = element_text(size=14), #change legend title font size
+        legend.text = element_text(size=14)) #change legend text font size
 #ggsave("3-images/figures_2023-10-20/co2_vs_nova_all.png")
 
 combined %>% 
@@ -194,7 +207,23 @@ combined %>%
   ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
   geom_point(size = 3)+ 
   geom_path(aes(group = Condition))+
-  facet_wrap(~substrate+Condition)
+  labs(x ="Cell counts",
+       y = "CO2 (ppm)",
+    title = "CO2 and Biomass",
+       # subtitle = "",
+       caption = "Chitin and CMC resperation Vs biomass
+       correlation")+
+  facet_wrap(~substrate+Condition)+
+  
+  theme(axis.title = element_text(size = 14),
+        axis.text = element_text(size = 14),
+        strip.text = element_text(size = 14),
+        plot.caption = element_text(size = 14, hjust = 0.5,face = "italic"))+
+  theme(legend.key.size = unit(0.5, 'cm'), #change legend key size
+        legend.key.height = unit(1, 'cm'), #change legend key height
+        legend.key.width = unit(1, 'cm'), #change legend key width
+        legend.title = element_text(size=14), #change legend title font size
+        legend.text = element_text(size=14)) #change legend text font size
 #ggsave("3-images/figures_2023-10-20/co2_vs_nova_cmc_chitin.png")
 
 combined %>% 
@@ -202,6 +231,22 @@ combined %>%
   ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
   geom_point(size = 3)+
   geom_path(aes(group = Condition))+
+  labs(x ="Cell counts",
+       y = "CO2 (ppm)",
+       title = "CO2 and Biomass",
+       # subtitle = "",
+       caption = "NAG and Trehelose resperation Vs biomass
+       correlation")+
   facet_wrap(~substrate+Condition)+
-  theme_bw()
+  
+  theme(axis.title = element_text(size = 14),
+        axis.text = element_text(size = 14),
+        strip.text = element_text(size = 14),
+        plot.caption = element_text(size = 14, hjust = 0.5,face = "italic"))+
+  theme(legend.key.size = unit(0.5, 'cm'), #change legend key size
+        legend.key.height = unit(1, 'cm'), #change legend key height
+        legend.key.width = unit(1, 'cm'), #change legend key width
+        legend.title = element_text(size=14), #change legend title font size
+        legend.text = element_text(size=14)) #change legend text font size
 #ggsave("3-images/figures_2023-10-20/co2_vs_nova_nag_treh.png")
+
