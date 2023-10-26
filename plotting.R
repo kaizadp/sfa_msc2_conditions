@@ -76,11 +76,21 @@ co2_summary_full %>%
        title = "CO2 - comparisons",
        subtitle = "96 hours",
        caption = "colors represent percent change of a given condition compared to the reference. 
+      percentage is the y axis / x axis 
        + values indicate an increase, 
        - values indicate a decrease")+
   facet_wrap(~substrate)+
   theme_bw()+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+theme(axis.title = element_text(size = 14),
+      axis.text = element_text(size = 14),
+      strip.text = element_text(size = 14),
+      plot.caption = element_text(size = 14, hjust = 0.5,face = "italic"))+
+  theme(legend.key.size = unit(0.5, 'cm'), #change legend key size
+        legend.key.height = unit(1, 'cm'), #change legend key height
+        legend.key.width = unit(1, 'cm'), #change legend key width
+        legend.title = element_text(size=14), #change legend title font size
+        legend.text = element_text(size=14)) #change legend text font size
 #ggsave("3-images/figures_2023-10-20/co2_heatmap_comparisons.png")
 
 
@@ -126,7 +136,16 @@ nova_summary %>%
   #  scale_fill_gradient(low = "grey90", high = "steelblue2")+                    
   facet_wrap(~substrate, nrow = 1)+
   theme_bw()+
-  theme(panel.grid = element_blank())
+  theme(panel.grid = element_blank())+
+  theme(axis.title = element_text(size = 14),
+        axis.text = element_text(size = 14),
+        strip.text = element_text(size = 14),
+        plot.caption = element_text(size = 14, hjust = 0.5,face = "italic"))+
+  theme(legend.key.size = unit(0.5, 'cm'), #change legend key size
+        legend.key.height = unit(1, 'cm'), #change legend key height
+        legend.key.width = unit(1, 'cm'), #change legend key width
+        legend.title = element_text(size=14), #change legend title font size
+        legend.text = element_text(size=14)) #change legend text font size
 
 #
 # NOVA comparison heatmaps ----
@@ -214,7 +233,6 @@ combined %>%
        caption = "Chitin and CMC resperation Vs biomass
        correlation")+
   facet_wrap(~substrate+Condition)+
-  
   theme(axis.title = element_text(size = 14),
         axis.text = element_text(size = 14),
         strip.text = element_text(size = 14),
@@ -238,7 +256,6 @@ combined %>%
        caption = "NAG and Trehelose resperation Vs biomass
        correlation")+
   facet_wrap(~substrate+Condition)+
-  
   theme(axis.title = element_text(size = 14),
         axis.text = element_text(size = 14),
         strip.text = element_text(size = 14),
