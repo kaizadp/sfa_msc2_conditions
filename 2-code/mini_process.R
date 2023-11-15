@@ -1,18 +1,18 @@
-
-
-# 1. load packages --------------------------------------------------------
 library(tidyverse)
 theme_set(theme_bw())
 
 # setup -------------------------------------------------------------------
 
 ## arrange order of experimental conditions
+FILEPATH = "1-data/mini_test"
+filePaths <- list.files(path = FILEPATH, pattern = "mini_test.csv", full.names = TRUE)
+
 order_conditions = function(dat){
   dat |> 
-    mutate(Condition = factor(Condition, levels = c("15C", "30C",
-                                                    "pH 6", "pH 7.4",
-                                                    "High Iron", "No Vit.Min.",
-                                                    "Control", "Stagnant")))
+    mutate(Condition = factor(Condition, levels = c("Cont.CMC,stag.CMC,Iron.CMC,NoVitMin.CMC,
+                                                    Cont.Tre,stag.Tre,Iron.Tre,NoVitMin.Tre,
+                                                    Cont.NAG,stag.NAG,Iron.NAG,NoVitMin.NAG,
+                                                    Cont.Chitin,stag.Chitin,Iron.Chitin,NoVitMin.Chitin,")))
 }
 align_hours = function(dat){
   dat %>% 
@@ -29,15 +29,7 @@ align_hours = function(dat){
 #
 
 # import files --------------------------------------------------------------
-import_nova_files <- function(FILEPATH){
-  
-  filepaths = list.files(path=FILEPATH, pattern = c("nova", ".csv"), full.names = TRUE)
-  do.call(bind_rows, lapply(filepaths, function(path){
-    df <- read_csv(path) %>% 
-      mutate(source = basename(path))
-    df
-  }))
-}
+
 import_co2_files <- function(FILEPATH){
   
   filepaths = list.files(path=FILEPATH, pattern = c("CO2", ".csv"), full.names = TRUE)
@@ -49,8 +41,7 @@ import_co2_files <- function(FILEPATH){
   
 }
 
-data_nova <- import_nova_files(FILEPATH = "1-data/nova_co2") %>% janitor::clean_names()
-data_co2 <- import_co2_files(FILEPATH = "1-data/nova_co2") %>% janitor::clean_names()
+data_co2 <- import_co2_files(FILEPATH = "1-data/mini_test") %>% janitor::clean_names()
 
 #
 
@@ -70,7 +61,7 @@ co2_processed <-
          #Hours = case_match(Hours, "45" ~ "46", "115" ~ "119", "141" ~ "139", .default = Hours),
          #Hours = str_sort(Hours, numeric = TRUE)
   ) %>% 
-  align_hours() %>% 
+#  align_hours() %>% 
   mutate(Hours_num = as.numeric(Hours),
          Hours = fct_reorder(Hours, Hours_num))
 
@@ -80,15 +71,6 @@ co2_blanks =
   dplyr::select(-Replicate, -name) |> 
   rename(blank_ppm = co2_ppm)
 
-co2_samples = 
-  co2_processed |> 
-  filter(!Replicate %in% "blank") |> 
-  left_join(co2_blanks) |> 
-  mutate(CO2_bl_corrected_ppm = co2_ppm - blank_ppm) |> 
-  order_conditions() %>% 
-  #filter(!Condition %in% "15C") %>%  # removes all 15C
-  filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC"))) %>% 
-  force()
 
 # plot CO2 data ----
 # create function for CO2 graphs
@@ -116,14 +98,8 @@ plot_co2 = function(co2_samples){
 }
 
 # now, plot
-gg_co2_all = plot_co2(co2_samples)
+gg_co2_all = plot_co2(data_co2)
 #ggsave("3-images/figures_2023-10-20/co2_bar.png", width = 14, height = 10)
-gg_co2_chitin = plot_co2(co2_samples %>% filter(substrate == "Chitin"))
-gg_co2_CMC = plot_co2(co2_samples %>% filter(substrate == "CMC"))
-gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG"))
-gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
-
-gg_co2_all
 
 
 
@@ -184,28 +160,28 @@ nova_samples =
   ###  filter(!(Condition %in% "Control" & Replicate %in% "C")) |> 
   ### filter(!(Condition %in% "30C" & Replicate %in% "A")) %>% 
   #filter(!Condition %in% "15C") %>%  # removes all 15C
-   filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC"))) %>% 
+  filter(!((Condition == "15C" & substrate == "Chitin")|(Condition == "15C" & substrate == "CMC"))) %>% 
   force()
 
 #
 # plot Novacyte data ----
 plot_nova = function(nova_samples){
-#gg_nova_no_corr <- 
+  #gg_nova_no_corr <- 
   nova_samples |> 
-  ggplot(aes(x = Hours, 
-             y = Absorbance, fill = Condition,
-             group = Condition))+
-  stat_summary(geom = "bar", position = "dodge")+
-  stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
-  # if you want to plot the actual data points, use this line below: 
-  # geom_point(color = "black", position = position_dodge(width = 0.9))+
-  labs(title = "Biomass collection",
-       subtitle = "Figure 2",
-       x = "Time, hours",
-       y = "Cell counts")+
-  scale_y_continuous(labels = scales::comma)+
-  scale_fill_brewer(palette = "Paired")+
-  facet_wrap(~substrate, scales = "free_y")+
+    ggplot(aes(x = Hours, 
+               y = Absorbance, fill = Condition,
+               group = Condition))+
+    stat_summary(geom = "bar", position = "dodge")+
+    stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
+    # if you want to plot the actual data points, use this line below: 
+    # geom_point(color = "black", position = position_dodge(width = 0.9))+
+    labs(title = "Biomass collection",
+         subtitle = "Figure 2",
+         x = "Time, hours",
+         y = "Cell counts")+
+    scale_y_continuous(labels = scales::comma)+
+    scale_fill_brewer(palette = "Paired")+
+    facet_wrap(~substrate, scales = "free_y")+
     theme(axis.title = element_text(size = 14),
           axis.text = element_text(size = 14),
           strip.text = element_text(size = 14))

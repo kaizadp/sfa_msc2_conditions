@@ -77,6 +77,7 @@ co2_summary_full %>%
        subtitle = "96 hours",
        caption = "colors represent percent change of a given condition compared to the reference. 
       percentage is the y axis / x axis 
+      No 15C data for CMC and Chitin due to unreliable tempature
        + values indicate an increase, 
        - values indicate a decrease")+
   facet_wrap(~substrate)+
@@ -101,7 +102,9 @@ theme(axis.title = element_text(size = 14),
 nova_summary = 
   nova_samples %>% 
   group_by(Condition, Hours, substrate) %>% 
-  dplyr::summarise(mean_abs = mean(Absorbance_bl_corrected)) %>% 
+  dplyr::summarise(mean_abs = mean(Absorbance)) %>% 
+  #dplyr::summarise(mean_abs = mean(Absorbance_bl_corr)) %>% 
+  #if we want plank corrections
   order_conditions()
 
 # plot all hours
@@ -180,8 +183,10 @@ nova_summary_full %>%
        title = "Novacyte - comparisons",
        subtitle = "96 hours",
        caption = "colors represent percent change of a given condition compared to the reference. 
-       + values indicate an increase, 
-       - values indicate a decrease")+
+      percentage is the y axis / x axis
+       + values indicate an increase, - values indicate a decrease,
+       No 15C data for CMC and Chitin due to unreliable tempature")+
+  
   facet_wrap(~substrate)+
   theme_bw()+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -204,7 +209,7 @@ combined =
 combined %>% 
   ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
   geom_point(size = 3)+
-  geom_path(aes(group = Condition))+
+  geom_path(aes(group = Condition), color = "black")+
   labs(x ="Cell counts",
        y = "CO2 (ppm)",
        title = "CO2 Vs Biomass",
@@ -224,14 +229,15 @@ combined %>%
 combined %>% 
   filter(substrate %in% c("CMC", "Chitin")) %>% 
   ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
-  geom_point(size = 3)+ 
-  geom_path(aes(group = Condition))+
+  geom_point(size = 5)+ 
+  geom_path(aes(group = Condition), color = "black")+
   labs(x ="Cell counts",
        y = "CO2 (ppm)",
     title = "CO2 and Biomass",
        # subtitle = "",
        caption = "Chitin and CMC resperation Vs biomass
-       correlation")+
+       correlation
+    no blank corrections")+
   facet_wrap(~substrate+Condition)+
   theme(axis.title = element_text(size = 14),
         axis.text = element_text(size = 14),
@@ -247,14 +253,15 @@ combined %>%
 combined %>% 
   filter(!substrate %in% c("CMC", "Chitin")) %>% 
   ggplot(aes(y = mean_co2, x = mean_abs, color = Hours))+
-  geom_point(size = 3)+
-  geom_path(aes(group = Condition))+
+  geom_point(size = 5)+
+  geom_path(aes(group = Condition), color = "black")+
   labs(x ="Cell counts",
        y = "CO2 (ppm)",
        title = "CO2 and Biomass",
        # subtitle = "",
-       caption = "NAG and Trehelose resperation Vs biomass
-       correlation")+
+       caption = "resperation Vs biomass
+       correlation
+       No Blank corrections")+
   facet_wrap(~substrate+Condition)+
   theme(axis.title = element_text(size = 14),
         axis.text = element_text(size = 14),
@@ -265,5 +272,6 @@ combined %>%
         legend.key.width = unit(1, 'cm'), #change legend key width
         legend.title = element_text(size=14), #change legend title font size
         legend.text = element_text(size=14)) #change legend text font size
+ # geom_line( color = "grey")
 #ggsave("3-images/figures_2023-10-20/co2_vs_nova_nag_treh.png")
 
