@@ -61,37 +61,48 @@ co2_summary_full_wide =
   dplyr::select(substrate, Hours, Condition_x, Condition_y, percent_change) %>% 
   pivot_wider(names_from = "Condition_y", values_from = "percent_change")
 
-co2_summary_full %>% 
-  mutate(percent_change = round(percent_change)) %>% 
-  filter(Hours == "96") %>% 
-  ggplot(aes(x = Condition_x, y = Condition_y,
-             fill = percent_change))+
-  geom_tile()+
-  coord_equal()+
-  geom_text(aes(label = percent_change), color = "black", size = 3.5, fontface = "bold")+
-  scale_fill_gradient2(low = "firebrick", high = "steelblue1", mid = "white")+
-  labs(x = "Condition",
-       y = "Reference condition",
-       fill = "% change in CO2",
-       title = "CO2 - comparisons",
-       subtitle = "96 hours",
-       caption = "colors represent percent change of a given condition compared to the reference. 
+plot_co2_comparison_heatmap = function(co2_summary_full){
+  
+  co2_summary_full %>% 
+    mutate(percent_change = round(percent_change)) %>% 
+    filter(Hours == "96") %>% 
+    ggplot(aes(x = Condition_x, y = Condition_y,
+               fill = percent_change))+
+    geom_tile()+
+    coord_equal()+
+    geom_text(aes(label = percent_change), color = "black", size = 3.5, fontface = "bold")+
+    scale_fill_gradient2(low = "firebrick", high = "steelblue1", mid = "white")+
+    labs(x = "Condition",
+         y = "Reference condition",
+         fill = "% change in CO2",
+         title = "CO2 - comparisons",
+         subtitle = "96 hours")+
+    facet_wrap(~substrate)+
+    theme_bw()+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    theme(axis.title = element_text(size = 14),
+          axis.text = element_text(size = 14),
+          strip.text = element_text(size = 14),
+          plot.caption = element_text(size = 14, hjust = 0.5,face = "italic"))+
+    theme(legend.key.size = unit(0.5, 'cm'), #change legend key size
+          legend.key.height = unit(1, 'cm'), #change legend key height
+          legend.key.width = unit(1, 'cm'), #change legend key width
+          legend.title = element_text(size=14), #change legend title font size
+          legend.text = element_text(size=14)) #change legend text font size
+  
+}
+
+co2_comparisons_all = plot_co2_comparison_heatmap(co2_summary_full)+
+  labs(caption = "colors represent percent change of a given condition compared to the reference. 
       percentage is the y axis / x axis 
       No 15C data for CMC and Chitin due to unreliable tempature
        + values indicate an increase, 
-       - values indicate a decrease")+
-  facet_wrap(~substrate)+
-  theme_bw()+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-theme(axis.title = element_text(size = 14),
-      axis.text = element_text(size = 14),
-      strip.text = element_text(size = 14),
-      plot.caption = element_text(size = 14, hjust = 0.5,face = "italic"))+
-  theme(legend.key.size = unit(0.5, 'cm'), #change legend key size
-        legend.key.height = unit(1, 'cm'), #change legend key height
-        legend.key.width = unit(1, 'cm'), #change legend key width
-        legend.title = element_text(size=14), #change legend title font size
-        legend.text = element_text(size=14)) #change legend text font size
+       - values indicate a decrease")
+co2_comparisons_chitin = plot_co2_comparison_heatmap(co2_summary_full %>% filter(substrate == "Chitin"))
+co2_comparisons_cmc = plot_co2_comparison_heatmap(co2_summary_full %>% filter(substrate == "CMC"))
+co2_comparisons_nag = plot_co2_comparison_heatmap(co2_summary_full %>% filter(substrate == "NAG"))
+co2_comparisons_trehalose = plot_co2_comparison_heatmap(co2_summary_full %>% filter(substrate == "Trehalose"))
+
 #ggsave("3-images/figures_2023-10-20/co2_heatmap_comparisons.png")
 
 
@@ -168,28 +179,36 @@ nova_summary_full_wide =
   dplyr::select(substrate, Hours, Condition_x, Condition_y, percent_change) %>% 
   pivot_wider(names_from = "Condition_y", values_from = "percent_change")
 
-nova_summary_full %>% 
-  mutate(percent_change = round(percent_change)) %>% 
-  filter(Hours == "96") %>% 
-  ggplot(aes(x = Condition_x, y = Condition_y,
-             fill = percent_change))+
-  geom_tile()+
-  coord_equal()+
-  geom_text(aes(label = percent_change), color = "black", size = 3.5, fontface = "bold")+
-  scale_fill_gradient2(low = "firebrick", high = "steelblue1", mid = "white")+
-  labs(x = "Condition",
-       y = "Reference condition",
-       fill = "% change in Absorbance",
-       title = "Novacyte - comparisons",
-       subtitle = "96 hours",
-       caption = "colors represent percent change of a given condition compared to the reference. 
+plot_nova_comparison_heatmap = function(nova_summary_full){
+  nova_summary_full %>% 
+    mutate(percent_change = round(percent_change)) %>% 
+    filter(Hours == "96") %>% 
+    ggplot(aes(x = Condition_x, y = Condition_y,
+               fill = percent_change))+
+    geom_tile()+
+    coord_equal()+
+    geom_text(aes(label = percent_change), color = "black", size = 3.5, fontface = "bold")+
+    scale_fill_gradient2(low = "firebrick", high = "steelblue1", mid = "white")+
+    labs(x = "Condition",
+         y = "Reference condition",
+         fill = "% change in Absorbance",
+         title = "Novacyte - comparisons",
+         subtitle = "96 hours"
+         )+
+    
+    facet_wrap(~substrate)+
+    theme_bw()+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+}
+nova_comparisons_all = plot_nova_comparison_heatmap(nova_summary_full)+
+  labs(caption = "colors represent percent change of a given condition compared to the reference. 
       percentage is the y axis / x axis
        + values indicate an increase, - values indicate a decrease,
-       No 15C data for CMC and Chitin due to unreliable tempature")+
-  
-  facet_wrap(~substrate)+
-  theme_bw()+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+       No 15C data for CMC and Chitin due to unreliable tempature")
+nova_comparisons_chitin = plot_nova_comparison_heatmap(nova_summary_full %>% filter(substrate == "Chitin"))
+nova_comparisons_cmc = plot_nova_comparison_heatmap(nova_summary_full %>% filter(substrate == "CMC"))
+nova_comparisons_nag = plot_nova_comparison_heatmap(nova_summary_full %>% filter(substrate == "NAG"))
+nova_comparisons_trehalose = plot_nova_comparison_heatmap(nova_summary_full %>% filter(substrate == "Trehalose"))
 #ggsave("3-images/figures_2023-10-20/nova_heatmap_comparisons.png")
 
 
