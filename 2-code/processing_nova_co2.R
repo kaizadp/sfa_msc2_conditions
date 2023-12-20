@@ -2,7 +2,8 @@
 
 # 1. load packages --------------------------------------------------------
 library(tidyverse)
-theme_set(theme_bw())
+theme_set(theme_bw(base_size = 14)+
+            theme(axis.title = element_text(face = "bold")))
 
 # setup -------------------------------------------------------------------
 
@@ -111,9 +112,10 @@ plot_co2 = function(co2_samples){
          y = "CO2, ppm")+
     scale_fill_brewer(palette = "Paired")+
     scale_color_brewer(palette = "Paired")+
-    theme(axis.title = element_text(size = 14),
-          axis.text = element_text(size = 14),
-          strip.text = element_text(size = 14))
+    theme(#axis.title = element_text(size = 14),
+          #axis.text = element_text(size = 14),
+          #strip.text = element_text(size = 14)
+          )
   
 }
 
@@ -218,11 +220,4 @@ gg_nova_chitin = plot_nova(nova_samples %>% filter(substrate == "Chitin"))
 gg_nova_CMC = plot_nova(nova_samples %>% filter(substrate == "CMC"))
 gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
 gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
-
-
-gg_nova_all
-gg_nova_CMC
-gg_co2_CMC
-gg_nova_chitin
-gg_co2_chitin
 

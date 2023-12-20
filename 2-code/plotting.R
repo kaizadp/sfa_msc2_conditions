@@ -70,7 +70,7 @@ plot_co2_comparison_heatmap = function(co2_summary_full){
                fill = percent_change))+
     geom_tile()+
     coord_equal()+
-    geom_text(aes(label = percent_change), color = "black", size = 3.5, fontface = "bold")+
+    geom_text(aes(label = percent_change), color = "black", size = 5, fontface = "bold")+
     scale_fill_gradient2(low = "firebrick", high = "steelblue1", mid = "white")+
     labs(x = "Condition",
          y = "Reference condition",
@@ -143,7 +143,7 @@ nova_summary %>%
   ggplot(aes(x = Hours, y = Condition, fill = mean_abs))+
   geom_tile(alpha = 0.8, color = "black")+
   coord_equal()+
-  geom_text(aes(label = mean_abs), color = "black", size = 3.5, fontface = "bold")+
+  geom_text(aes(label = mean_abs), color = "black", size = 5, fontface = "bold")+
   scale_fill_gradientn(colors = soilpalettes::soil_palette("redox2", 5))+
   ##  scale_fill_stepsn(colors = soilpalettes::soil_palette("redox2", 12),
   ##                    breaks = c(0, 2000, 5000, 10000, 40000, 50000))+
@@ -187,7 +187,7 @@ plot_nova_comparison_heatmap = function(nova_summary_full){
                fill = percent_change))+
     geom_tile()+
     coord_equal()+
-    geom_text(aes(label = percent_change), color = "black", size = 3.5, fontface = "bold")+
+    geom_text(aes(label = percent_change), color = "black", size = 5, fontface = "bold")+
     scale_fill_gradient2(low = "firebrick", high = "steelblue1", mid = "white")+
     labs(x = "Condition",
          y = "Reference condition",
