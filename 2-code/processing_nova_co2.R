@@ -43,7 +43,8 @@ import_co2_files <- function(FILEPATH){
   filepaths = list.files(path=FILEPATH, pattern = c("CO2", ".csv"), full.names = TRUE)
   do.call(bind_rows, lapply(filepaths, function(path){
     df <- read_csv(path) %>% 
-      mutate(source = basename(path))
+      mutate(source = basename(path),
+             `Hrs of samples` = as.character(`Hrs of samples`))
     df
   }))
   
@@ -101,10 +102,11 @@ plot_co2 = function(co2_samples){
     # if you want to plot the actual data points, use this line below: 
     # geom_point(color = "black", position = position_dodge(width = 0.9))+
     expand_limits(x = 0)+
+    scale_x_discrete(drop = F)+
     scale_y_continuous(labels = scales::comma)+
     facet_wrap(~substrate, scales = "free_y")+
     labs(title = "CO2",
-         subtitle = "Figure 1",
+         #subtitle = "Figure 1",
          x = "Time, hours",
          y = "CO2, ppm")+
     scale_fill_brewer(palette = "Paired")+
@@ -120,10 +122,9 @@ gg_co2_all = plot_co2(co2_samples)
 #ggsave("3-images/figures_2023-10-20/co2_bar.png", width = 14, height = 10)
 gg_co2_chitin = plot_co2(co2_samples %>% filter(substrate == "Chitin"))
 gg_co2_CMC = plot_co2(co2_samples %>% filter(substrate == "CMC"))
-gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG"))
+gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG")) + 
+  annotate("text", label = "NA", x = 1, y = 20000, size = 8)
 gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
-
-gg_co2_all
 
 
 
