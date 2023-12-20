@@ -1,257 +1,257 @@
-﻿Specimen ID,Specimen,Plate ID,Well ID,Sample,Run Time,All Abs. Count
-1,Specimen1,1,A1,Control_A,12/11/22 13:52,551
-1,Specimen1,1,A2,pH 6_A,12/11/22 13:54,375
-1,Specimen1,1,A3,pH 7.4_A,12/11/22 13:57,438
-1,Specimen1,1,A4,15C_A,12/11/22 13:59,453
-1,Specimen1,1,A5,30C_A,12/11/22 14:02,415
-1,Specimen1,1,A6,High Iron_A,12/11/22 14:04,1981
-1,Specimen1,1,A7,Stagnant_A,12/11/22 14:07,223
-1,Specimen1,1,A8,No Vit.Min._A,12/11/22 14:09,110
-1,Specimen1,1,B1,Control_B,12/11/22 14:12,485
-1,Specimen1,1,B2,pH 6_B,12/11/22 14:14,264
-1,Specimen1,1,B3,pH 7.4_B,12/11/22 14:16,380
-1,Specimen1,1,B4,15C_B,12/11/22 14:19,372
-1,Specimen1,1,B5,30C_B,12/11/22 14:21,327
-1,Specimen1,1,B6,High Iron_B,12/11/22 14:24,1758
-1,Specimen1,1,B7,Stagnant_B,12/11/22 14:26,157
-1,Specimen1,1,B8,No Vit.Min._B,12/11/22 14:29,219
-1,Specimen1,1,C1,Control_C,12/11/22 14:31,359
-1,Specimen1,1,C2,pH 6_C,12/11/22 14:33,224
-1,Specimen1,1,C3,pH 7.4_C,12/11/22 14:36,209
-1,Specimen1,1,C4,15C_C,12/11/22 14:38,297
-1,Specimen1,1,C5,30C_C,12/11/22 14:41,309
-1,Specimen1,1,C6,High Iron_C,12/11/22 14:43,1819
-1,Specimen1,1,C7,Stagnant_C,12/11/22 14:46,147
-1,Specimen1,1,C8,No Vit.Min._C,12/11/22 14:48,202
-1,Specimen1,1,D1,Control_D,12/11/22 14:51,96.4
-1,Specimen1,1,D2,pH 6_D,12/11/22 14:53,34.5
-1,Specimen1,1,D3,pH 7.4_D,12/11/22 14:55,21.8
-1,Specimen1,1,D4,15C_D,12/11/22 14:57,50.8
-1,Specimen1,1,D5,30C_D,12/11/22 15:00,23.1
-1,Specimen1,1,D6,High Iron_D,12/11/22 15:02,11.9
-1,Specimen1,1,D7,Stagnant_D,12/11/22 15:05,13.6
-1,Specimen1,1,D8,No Vit.Min._D,12/11/22 15:07,8.14
-2,Specimen2,2,A1,Control_A,12/11/22 16:53,2923
-2,Specimen2,2,A2,pH 6_A,12/11/22 16:55,1563
-2,Specimen2,2,A3,pH 7.4_A,12/11/22 16:57,1646
-2,Specimen2,2,A4,15C_A,12/11/22 17:00,1851
-2,Specimen2,2,A5,30C_A,12/11/22 17:02,41625
-2,Specimen2,2,A6,High Iron_A,12/11/22 17:04,1564
-2,Specimen2,2,A7,Stagnant_A,12/11/22 17:07,1197
-2,Specimen2,2,A8,No Vit.Min._A,12/11/22 17:09,1239
-2,Specimen2,2,B1,Control_B,12/11/22 17:12,3215
-2,Specimen2,2,B2,pH 6_B,12/11/22 17:14,1603
-2,Specimen2,2,B3,pH 7.4_B,12/11/22 17:16,1769
-2,Specimen2,2,B4,15C_B,12/11/22 17:19,1786
-2,Specimen2,2,B5,30C_B,12/11/22 17:21,40427
-2,Specimen2,2,B6,High Iron_B,12/11/22 17:23,1929
-2,Specimen2,2,B7,Stagnant_B,12/11/22 17:26,1002
-2,Specimen2,2,B8,No Vit.Min._B,12/11/22 17:28,1661
-2,Specimen2,2,C1,Control_C,12/11/22 17:31,2746
-2,Specimen2,2,C2,pH 6_C,12/11/22 17:33,1487
-2,Specimen2,2,C3,pH 7.4_C,12/11/22 17:36,1653
-2,Specimen2,2,C4,15C_C,12/11/22 17:38,1688
-2,Specimen2,2,C5,30C_C,12/11/22 17:40,41943
-2,Specimen2,2,C6,High Iron_C,12/11/22 17:43,1756
-2,Specimen2,2,C7,Stagnant_C,12/11/22 17:45,997
-2,Specimen2,2,C8,No Vit.Min._C,12/11/22 17:47,1330
-2,Specimen2,2,D1,Control_D,12/11/22 17:50,75.9
-2,Specimen2,2,D2,pH 6_D,12/11/22 17:52,90
-2,Specimen2,2,D3,pH 7.4_D,12/11/22 17:55,69.3
-2,Specimen2,2,D4,15C_D,12/11/22 17:57,68.6
-2,Specimen2,2,D5,30C_D,12/11/22 17:59,63.1
-2,Specimen2,2,D6,High Iron_D,12/11/22 18:02,55.9
-2,Specimen2,2,D7,Stagnant_D,12/11/22 18:04,60.5
-2,Specimen2,2,D8,No Vit.Min._D,12/11/22 18:06,60.3
-3,Specimen3,3,A1,Control_A,12/12/22 19:04,25252
-3,Specimen3,3,A2,pH 6_A,12/12/22 19:06,29420
-3,Specimen3,3,A3,pH 7.4_A,12/12/22 19:09,23041
-3,Specimen3,3,A4,15C_A,12/12/22 19:11,8549
-3,Specimen3,3,A5,30C_A,12/12/22 19:14,44622
-3,Specimen3,3,A6,High Iron_A,12/12/22 19:16,30708
-3,Specimen3,3,A7,Stagnant_A,12/12/22 19:18,2343
-3,Specimen3,3,A8,No Vit.Min._A,12/12/22 19:21,17399
-3,Specimen3,3,B1,Control_B,12/12/22 19:23,25310
-3,Specimen3,3,B2,pH 6_B,12/12/22 19:25,30291
-3,Specimen3,3,B3,pH 7.4_B,12/12/22 19:28,22515
-3,Specimen3,3,B4,15C_B,12/12/22 19:30,8718
-3,Specimen3,3,B5,30C_B,12/12/22 19:33,45093
-3,Specimen3,3,B6,High Iron_B,12/12/22 19:35,39152
-3,Specimen3,3,B7,Stagnant_B,12/12/22 19:38,3010
-3,Specimen3,3,B8,No Vit.Min._B,12/12/22 19:40,24364
-3,Specimen3,3,C1,Control_C,12/12/22 19:43,29623
-3,Specimen3,3,C2,pH 6_C,12/12/22 19:45,33033
-3,Specimen3,3,C3,pH 7.4_C,12/12/22 19:48,22293
-3,Specimen3,3,C4,15C_C,12/12/22 19:50,8707
-3,Specimen3,3,C5,30C_C,12/12/22 19:53,45750
-3,Specimen3,3,C6,High Iron_C,12/12/22 19:55,38149
-3,Specimen3,3,C7,Stagnant_C,12/12/22 19:57,2103
-3,Specimen3,3,C8,No Vit.Min._C,12/12/22 20:00,26537
-3,Specimen3,3,D1,Control_D,12/12/22 20:02,188
-3,Specimen3,3,D2,pH 6_D,12/12/22 20:04,61.8
-3,Specimen3,3,D3,pH 7.4_D,12/12/22 20:07,27.9
-3,Specimen3,3,D4,15C_D,12/12/22 20:09,25.1
-3,Specimen3,3,D5,30C_D,12/12/22 20:11,42.2
-3,Specimen3,3,D6,High Iron_D,12/12/22 20:14,308
-3,Specimen3,3,D7,Stagnant_D,12/12/22 20:16,21.1
-3,Specimen3,3,D8,No Vit.Min._D,12/12/22 20:18,28.6
-4,Specimen4,4,A1,Control_A,12/13/22 15:49,33081
-4,Specimen4,4,A2,pH 6_A,12/13/22 15:52,36857
-4,Specimen4,4,A3,pH 7.4_A,12/13/22 15:54,25639
-4,Specimen4,4,A4,15C_A,12/13/22 15:56,18040
-4,Specimen4,4,A5,30C_A,12/13/22 15:59,32632
-4,Specimen4,4,A6,High Iron_A,12/13/22 16:01,37476
-4,Specimen4,4,A7,Stagnant_A,12/13/22 16:03,3621
-4,Specimen4,4,A8,No Vit.Min._A,12/13/22 16:06,34771
-4,Specimen4,4,B1,Control_B,12/13/22 16:08,33626
-4,Specimen4,4,B2,pH 6_B,12/13/22 16:10,37144
-4,Specimen4,4,B3,pH 7.4_B,12/13/22 16:13,28332
-4,Specimen4,4,B4,15C_B,12/13/22 16:15,18579
-4,Specimen4,4,B5,30C_B,12/13/22 16:17,33508
-4,Specimen4,4,B6,High Iron_B,12/13/22 16:20,43707
-4,Specimen4,4,B7,Stagnant_B,12/13/22 16:22,5189
-4,Specimen4,4,B8,No Vit.Min._B,12/13/22 16:25,37461
-4,Specimen4,4,C1,Control_C,12/13/22 16:27,36265
-4,Specimen4,4,C2,pH 6_C,12/13/22 16:30,34863
-4,Specimen4,4,C3,pH 7.4_C,12/13/22 16:32,26041
-4,Specimen4,4,C4,15C_C,12/13/22 16:34,16770
-4,Specimen4,4,C5,30C_C,12/13/22 16:37,31404
-4,Specimen4,4,C6,High Iron_C,12/13/22 16:39,44705
-4,Specimen4,4,C7,Stagnant_C,12/13/22 16:41,5965
-4,Specimen4,4,C8,No Vit.Min._C,12/13/22 16:43,37069
-4,Specimen4,4,D1,Control_D,12/13/22 16:46,77.2
-4,Specimen4,4,D2,pH 6_D,12/13/22 16:48,61.8
-4,Specimen4,4,D3,pH 7.4_D,12/13/22 16:51,54.8
-4,Specimen4,4,D4,15C_D,12/13/22 16:53,47.7
-4,Specimen4,4,D5,30C_D,12/13/22 16:55,52.1
-4,Specimen4,4,D6,High Iron_D,12/13/22 16:58,54.6
-4,Specimen4,4,D7,Stagnant_D,12/13/22 17:00,47.5
-4,Specimen4,4,D8,No Vit.Min._D,12/13/22 17:02,861
-5,Specimen5,5,A1,Control_A,12/14/22 16:48,29276
-5,Specimen5,5,A2,pH 6_A,12/14/22 16:50,35387
-5,Specimen5,5,A3,pH 7.4_A,12/14/22 16:53,21420
-5,Specimen5,5,A4,15C_A,12/14/22 16:55,31622
-5,Specimen5,5,A5,30C_A,12/14/22 16:57,44640
-5,Specimen5,5,A6,High Iron_A,12/14/22 17:00,39536
-5,Specimen5,5,A7,Stagnant_A,12/14/22 17:02,7105
-5,Specimen5,5,A8,No Vit.Min._A,12/14/22 17:04,25385
-5,Specimen5,5,B1,Control_B,12/14/22 17:06,37980
-5,Specimen5,5,B2,pH 6_B,12/14/22 17:09,36185
-5,Specimen5,5,B3,pH 7.4_B,12/14/22 17:11,30390
-5,Specimen5,5,B4,15C_B,12/14/22 17:13,29630
-5,Specimen5,5,B5,30C_B,12/14/22 17:16,44938
-5,Specimen5,5,B6,High Iron_B,12/14/22 17:18,40703
-5,Specimen5,5,B7,Stagnant_B,12/14/22 17:21,7634
-5,Specimen5,5,B8,No Vit.Min._B,12/14/22 17:23,41099
-5,Specimen5,5,C1,Control_C,12/14/22 17:25,31455
-5,Specimen5,5,C2,pH 6_C,12/14/22 17:28,36037
-5,Specimen5,5,C3,pH 7.4_C,12/14/22 17:30,24638
-5,Specimen5,5,C4,15C_C,12/14/22 17:33,27843
-5,Specimen5,5,C5,30C_C,12/14/22 17:35,44913
-5,Specimen5,5,C6,High Iron_C,12/14/22 17:37,43814
-5,Specimen5,5,C7,Stagnant_C,12/14/22 17:40,28327
-5,Specimen5,5,C8,No Vit.Min._C,12/14/22 17:42,40125
-5,Specimen5,5,D1,Control_D,12/14/22 17:44,172
-5,Specimen5,5,D2,pH 6_D,12/14/22 17:47,35.6
-5,Specimen5,5,D3,pH 7.4_D,12/14/22 17:49,30.8
-5,Specimen5,5,D4,15C_D,12/14/22 17:52,20.7
-5,Specimen5,5,D5,30C_D,12/14/22 17:54,15.8
-5,Specimen5,5,D6,High Iron_D,12/14/22 17:56,11
-5,Specimen5,5,D7,Stagnant_D,12/14/22 17:59,344
-5,Specimen5,5,D8,No Vit.Min._D,12/14/22 18:01,5762
-6,Specimen6,6,A1,Control_A,12/15/22 17:02,30728
-6,Specimen6,6,A2,pH 6_A,12/15/22 17:04,35998
-6,Specimen6,6,A3,pH 7.4_A,12/15/22 17:07,22195
-6,Specimen6,6,A4,15C_A,12/15/22 17:09,28377
-6,Specimen6,6,A5,30C_A,12/15/22 17:11,45954
-6,Specimen6,6,A6,High Iron_A,12/15/22 17:13,42727
-6,Specimen6,6,A7,Stagnant_A,12/15/22 17:16,10422
-6,Specimen6,6,A8,No Vit.Min._A,12/15/22 17:18,26851
-6,Specimen6,6,B1,Control_B,12/15/22 17:20,36497
-6,Specimen6,6,B2,pH 6_B,12/15/22 17:23,38130
-6,Specimen6,6,B3,pH 7.4_B,12/15/22 17:25,31019
-6,Specimen6,6,B4,15C_B,12/15/22 17:27,26142
-6,Specimen6,6,B5,30C_B,12/15/22 17:30,46167
-6,Specimen6,6,B6,High Iron_B,12/15/22 17:32,40759
-6,Specimen6,6,B7,Stagnant_B,12/15/22 17:35,10994
-6,Specimen6,6,B8,No Vit.Min._B,12/15/22 17:37,42465
-6,Specimen6,6,C1,Control_C,12/15/22 17:39,33032
-6,Specimen6,6,C2,pH 6_C,12/15/22 17:41,36823
-6,Specimen6,6,C3,pH 7.4_C,12/15/22 17:44,23001
-6,Specimen6,6,C4,15C_C,12/15/22 17:46,29864
-6,Specimen6,6,C5,30C_C,12/15/22 17:49,46050
-6,Specimen6,6,C6,High Iron_C,12/15/22 17:51,43699
-6,Specimen6,6,C7,Stagnant_C,12/15/22 17:53,15563
-6,Specimen6,6,C8,No Vit.Min._C,12/15/22 17:56,43700
-6,Specimen6,6,D1,Control_D,12/15/22 17:58,71.5
-6,Specimen6,6,D2,pH 6_D,12/15/22 18:01,46.4
-6,Specimen6,6,D3,pH 7.4_D,12/15/22 18:03,24.9
-6,Specimen6,6,D4,15C_D,12/15/22 18:05,25.7
-6,Specimen6,6,D5,30C_D,12/15/22 18:08,20.7
-6,Specimen6,6,D6,High Iron_D,12/15/22 18:10,17.8
-6,Specimen6,6,D7,Stagnant_D,12/15/22 18:12,573
-6,Specimen6,6,D8,No Vit.Min._D,12/15/22 18:15,6079
-7,Specimen7,7,A1,Control_A,12/16/22 14:42,31749
-7,Specimen7,7,A2,pH 6_A,12/16/22 14:44,36050
-7,Specimen7,7,A3,pH 7.4_A,12/16/22 14:47,17637
-7,Specimen7,7,A4,15C_A,12/16/22 14:49,22500
-7,Specimen7,7,A5,30C_A,12/16/22 14:52,44517
-7,Specimen7,7,A6,High Iron_A,12/16/22 14:54,43752
-7,Specimen7,7,A7,Stagnant_A,12/16/22 14:56,11697
-7,Specimen7,7,A8,No Vit.Min._A,12/16/22 14:59,28705
-7,Specimen7,7,B1,Control_B,12/16/22 15:01,35396
-7,Specimen7,7,B2,pH 6_B,12/16/22 15:04,36743
-7,Specimen7,7,B3,pH 7.4_B,12/16/22 15:06,28937
-7,Specimen7,7,B4,15C_B,12/16/22 15:08,24009
-7,Specimen7,7,B5,30C_B,12/16/22 15:11,43221
-7,Specimen7,7,B6,High Iron_B,12/16/22 15:13,40733
-7,Specimen7,7,B7,Stagnant_B,12/16/22 15:16,13789
-7,Specimen7,7,B8,No Vit.Min._B,12/16/22 15:18,41739
-7,Specimen7,7,C1,Control_C,12/16/22 15:20,32565
-7,Specimen7,7,C2,pH 6_C,12/16/22 15:23,36123
-7,Specimen7,7,C3,pH 7.4_C,12/16/22 15:25,24484
-7,Specimen7,7,C4,15C_C,12/16/22 15:28,23836
-7,Specimen7,7,C5,30C_C,12/16/22 15:30,41908
-7,Specimen7,7,C6,High Iron_C,12/16/22 15:32,42721
-7,Specimen7,7,C7,Stagnant_C,12/16/22 15:35,21276
-7,Specimen7,7,C8,No Vit.Min._C,12/16/22 15:37,42692
-7,Specimen7,7,D1,Control_D,12/16/22 15:39,326
-7,Specimen7,7,D2,pH 6_D,12/16/22 15:42,245
-7,Specimen7,7,D3,pH 7.4_D,12/16/22 15:44,295
-7,Specimen7,7,D4,15C_D,12/16/22 15:46,358
-7,Specimen7,7,D5,30C_D,12/16/22 15:49,297
-7,Specimen7,7,D6,High Iron_D,12/16/22 15:51,406
-7,Specimen7,7,D7,Stagnant_D,12/16/22 15:54,1179
-7,Specimen7,7,D8,No Vit.Min._D,12/16/22 15:56,6791
-8,Specimen8,8,A1,Control_A,12/18/22 12:11,31228
-8,Specimen8,8,A2,pH 6_A,12/18/22 12:13,35713
-8,Specimen8,8,A3,pH 7.4_A,12/18/22 12:16,20223
-8,Specimen8,8,A4,15C_A,12/18/22 12:18,19707
-8,Specimen8,8,A5,30C_A,12/18/22 12:20,43649
-8,Specimen8,8,A6,High Iron_A,12/18/22 12:23,41985
-8,Specimen8,8,A7,Stagnant_A,12/18/22 12:25,24429
-8,Specimen8,8,A8,No Vit.Min._A,12/18/22 12:27,25470
-8,Specimen8,8,B1,Control_B,12/18/22 12:30,33281
-8,Specimen8,8,B2,pH 6_B,12/18/22 12:32,39054
-8,Specimen8,8,B3,pH 7.4_B,12/18/22 12:35,26455
-8,Specimen8,8,B4,15C_B,12/18/22 12:37,20849
-8,Specimen8,8,B5,30C_B,12/18/22 12:39,45421
-8,Specimen8,8,B6,High Iron_B,12/18/22 12:42,41921
-8,Specimen8,8,B7,Stagnant_B,12/18/22 12:44,23281
-8,Specimen8,8,B8,No Vit.Min._B,12/18/22 12:47,36099
-8,Specimen8,8,C1,Control_C,12/18/22 12:49,29476
-8,Specimen8,8,C2,pH 6_C,12/18/22 12:51,36921
-8,Specimen8,8,C3,pH 7.4_C,12/18/22 12:54,21820
-8,Specimen8,8,C4,15C_C,12/18/22 12:56,20096
-8,Specimen8,8,C5,30C_C,12/18/22 12:59,42216
-8,Specimen8,8,C6,High Iron_C,12/18/22 13:01,38179
-8,Specimen8,8,C7,Stagnant_C,12/18/22 13:04,22953
-8,Specimen8,8,C8,No Vit.Min._C,12/18/22 13:06,34761
-8,Specimen8,8,D1,Control_D,12/18/22 13:09,27.1
-8,Specimen8,8,D2,pH 6_D,12/18/22 13:11,12.5
-8,Specimen8,8,D3,pH 7.4_D,12/18/22 13:13,7.48
-8,Specimen8,8,D4,15C_D,12/18/22 13:16,628
-8,Specimen8,8,D5,30C_D,12/18/22 13:18,2276
-8,Specimen8,8,D6,High Iron_D,12/18/22 13:20,7.26
-8,Specimen8,8,D7,Stagnant_D,12/18/22 13:23,35.4
-8,Specimen8,8,D8,No Vit.Min._D,12/18/22 13:25,5.5
+﻿Specimen ID,Specimen,Plate ID,Well ID,Sample,Run Time,All Abs. Count,skip
+1,Specimen1,1,A1,Control_A,12/11/22 13:52,551,
+1,Specimen1,1,A2,pH 6_A,12/11/22 13:54,375,
+1,Specimen1,1,A3,pH 7.4_A,12/11/22 13:57,438,
+1,Specimen1,1,A4,15C_A,12/11/22 13:59,453,
+1,Specimen1,1,A5,30C_A,12/11/22 14:02,415,
+1,Specimen1,1,A6,High Iron_A,12/11/22 14:04,1981,
+1,Specimen1,1,A7,Stagnant_A,12/11/22 14:07,223,
+1,Specimen1,1,A8,No Vit.Min._A,12/11/22 14:09,110,
+1,Specimen1,1,B1,Control_B,12/11/22 14:12,485,
+1,Specimen1,1,B2,pH 6_B,12/11/22 14:14,264,
+1,Specimen1,1,B3,pH 7.4_B,12/11/22 14:16,380,
+1,Specimen1,1,B4,15C_B,12/11/22 14:19,372,
+1,Specimen1,1,B5,30C_B,12/11/22 14:21,327,
+1,Specimen1,1,B6,High Iron_B,12/11/22 14:24,1758,
+1,Specimen1,1,B7,Stagnant_B,12/11/22 14:26,157,
+1,Specimen1,1,B8,No Vit.Min._B,12/11/22 14:29,219,
+1,Specimen1,1,C1,Control_C,12/11/22 14:31,359,
+1,Specimen1,1,C2,pH 6_C,12/11/22 14:33,224,
+1,Specimen1,1,C3,pH 7.4_C,12/11/22 14:36,209,
+1,Specimen1,1,C4,15C_C,12/11/22 14:38,297,
+1,Specimen1,1,C5,30C_C,12/11/22 14:41,309,
+1,Specimen1,1,C6,High Iron_C,12/11/22 14:43,1819,
+1,Specimen1,1,C7,Stagnant_C,12/11/22 14:46,147,
+1,Specimen1,1,C8,No Vit.Min._C,12/11/22 14:48,202,
+1,Specimen1,1,D1,Control_D,12/11/22 14:51,96.4,
+1,Specimen1,1,D2,pH 6_D,12/11/22 14:53,34.5,
+1,Specimen1,1,D3,pH 7.4_D,12/11/22 14:55,21.8,
+1,Specimen1,1,D4,15C_D,12/11/22 14:57,50.8,
+1,Specimen1,1,D5,30C_D,12/11/22 15:00,23.1,
+1,Specimen1,1,D6,High Iron_D,12/11/22 15:02,11.9,
+1,Specimen1,1,D7,Stagnant_D,12/11/22 15:05,13.6,
+1,Specimen1,1,D8,No Vit.Min._D,12/11/22 15:07,8.14,
+2,Specimen2,2,A1,Control_A,12/11/22 16:53,2923,
+2,Specimen2,2,A2,pH 6_A,12/11/22 16:55,1563,
+2,Specimen2,2,A3,pH 7.4_A,12/11/22 16:57,1646,
+2,Specimen2,2,A4,15C_A,12/11/22 17:00,1851,
+2,Specimen2,2,A5,30C_A,12/11/22 17:02,41625,
+2,Specimen2,2,A6,High Iron_A,12/11/22 17:04,1564,
+2,Specimen2,2,A7,Stagnant_A,12/11/22 17:07,1197,
+2,Specimen2,2,A8,No Vit.Min._A,12/11/22 17:09,1239,
+2,Specimen2,2,B1,Control_B,12/11/22 17:12,3215,
+2,Specimen2,2,B2,pH 6_B,12/11/22 17:14,1603,
+2,Specimen2,2,B3,pH 7.4_B,12/11/22 17:16,1769,
+2,Specimen2,2,B4,15C_B,12/11/22 17:19,1786,
+2,Specimen2,2,B5,30C_B,12/11/22 17:21,40427,
+2,Specimen2,2,B6,High Iron_B,12/11/22 17:23,1929,
+2,Specimen2,2,B7,Stagnant_B,12/11/22 17:26,1002,
+2,Specimen2,2,B8,No Vit.Min._B,12/11/22 17:28,1661,
+2,Specimen2,2,C1,Control_C,12/11/22 17:31,2746,
+2,Specimen2,2,C2,pH 6_C,12/11/22 17:33,1487,
+2,Specimen2,2,C3,pH 7.4_C,12/11/22 17:36,1653,
+2,Specimen2,2,C4,15C_C,12/11/22 17:38,1688,
+2,Specimen2,2,C5,30C_C,12/11/22 17:40,41943,
+2,Specimen2,2,C6,High Iron_C,12/11/22 17:43,1756,
+2,Specimen2,2,C7,Stagnant_C,12/11/22 17:45,997,
+2,Specimen2,2,C8,No Vit.Min._C,12/11/22 17:47,1330,
+2,Specimen2,2,D1,Control_D,12/11/22 17:50,75.9,
+2,Specimen2,2,D2,pH 6_D,12/11/22 17:52,90,
+2,Specimen2,2,D3,pH 7.4_D,12/11/22 17:55,69.3,
+2,Specimen2,2,D4,15C_D,12/11/22 17:57,68.6,
+2,Specimen2,2,D5,30C_D,12/11/22 17:59,63.1,
+2,Specimen2,2,D6,High Iron_D,12/11/22 18:02,55.9,
+2,Specimen2,2,D7,Stagnant_D,12/11/22 18:04,60.5,
+2,Specimen2,2,D8,No Vit.Min._D,12/11/22 18:06,60.3,
+3,Specimen3,3,A1,Control_A,12/12/22 19:04,25252,
+3,Specimen3,3,A2,pH 6_A,12/12/22 19:06,29420,
+3,Specimen3,3,A3,pH 7.4_A,12/12/22 19:09,23041,
+3,Specimen3,3,A4,15C_A,12/12/22 19:11,8549,
+3,Specimen3,3,A5,30C_A,12/12/22 19:14,44622,
+3,Specimen3,3,A6,High Iron_A,12/12/22 19:16,30708,
+3,Specimen3,3,A7,Stagnant_A,12/12/22 19:18,2343,
+3,Specimen3,3,A8,No Vit.Min._A,12/12/22 19:21,17399,
+3,Specimen3,3,B1,Control_B,12/12/22 19:23,25310,
+3,Specimen3,3,B2,pH 6_B,12/12/22 19:25,30291,
+3,Specimen3,3,B3,pH 7.4_B,12/12/22 19:28,22515,
+3,Specimen3,3,B4,15C_B,12/12/22 19:30,8718,
+3,Specimen3,3,B5,30C_B,12/12/22 19:33,45093,
+3,Specimen3,3,B6,High Iron_B,12/12/22 19:35,39152,
+3,Specimen3,3,B7,Stagnant_B,12/12/22 19:38,3010,
+3,Specimen3,3,B8,No Vit.Min._B,12/12/22 19:40,24364,
+3,Specimen3,3,C1,Control_C,12/12/22 19:43,29623,
+3,Specimen3,3,C2,pH 6_C,12/12/22 19:45,33033,
+3,Specimen3,3,C3,pH 7.4_C,12/12/22 19:48,22293,
+3,Specimen3,3,C4,15C_C,12/12/22 19:50,8707,
+3,Specimen3,3,C5,30C_C,12/12/22 19:53,45750,
+3,Specimen3,3,C6,High Iron_C,12/12/22 19:55,38149,
+3,Specimen3,3,C7,Stagnant_C,12/12/22 19:57,2103,
+3,Specimen3,3,C8,No Vit.Min._C,12/12/22 20:00,26537,
+3,Specimen3,3,D1,Control_D,12/12/22 20:02,188,
+3,Specimen3,3,D2,pH 6_D,12/12/22 20:04,61.8,
+3,Specimen3,3,D3,pH 7.4_D,12/12/22 20:07,27.9,
+3,Specimen3,3,D4,15C_D,12/12/22 20:09,25.1,
+3,Specimen3,3,D5,30C_D,12/12/22 20:11,42.2,
+3,Specimen3,3,D6,High Iron_D,12/12/22 20:14,308,
+3,Specimen3,3,D7,Stagnant_D,12/12/22 20:16,21.1,
+3,Specimen3,3,D8,No Vit.Min._D,12/12/22 20:18,28.6,
+4,Specimen4,4,A1,Control_A,12/13/22 15:49,33081,
+4,Specimen4,4,A2,pH 6_A,12/13/22 15:52,36857,
+4,Specimen4,4,A3,pH 7.4_A,12/13/22 15:54,25639,
+4,Specimen4,4,A4,15C_A,12/13/22 15:56,18040,
+4,Specimen4,4,A5,30C_A,12/13/22 15:59,32632,
+4,Specimen4,4,A6,High Iron_A,12/13/22 16:01,37476,
+4,Specimen4,4,A7,Stagnant_A,12/13/22 16:03,3621,
+4,Specimen4,4,A8,No Vit.Min._A,12/13/22 16:06,34771,
+4,Specimen4,4,B1,Control_B,12/13/22 16:08,33626,
+4,Specimen4,4,B2,pH 6_B,12/13/22 16:10,37144,
+4,Specimen4,4,B3,pH 7.4_B,12/13/22 16:13,28332,
+4,Specimen4,4,B4,15C_B,12/13/22 16:15,18579,
+4,Specimen4,4,B5,30C_B,12/13/22 16:17,33508,
+4,Specimen4,4,B6,High Iron_B,12/13/22 16:20,43707,
+4,Specimen4,4,B7,Stagnant_B,12/13/22 16:22,5189,
+4,Specimen4,4,B8,No Vit.Min._B,12/13/22 16:25,37461,
+4,Specimen4,4,C1,Control_C,12/13/22 16:27,36265,
+4,Specimen4,4,C2,pH 6_C,12/13/22 16:30,34863,
+4,Specimen4,4,C3,pH 7.4_C,12/13/22 16:32,26041,
+4,Specimen4,4,C4,15C_C,12/13/22 16:34,16770,
+4,Specimen4,4,C5,30C_C,12/13/22 16:37,31404,
+4,Specimen4,4,C6,High Iron_C,12/13/22 16:39,44705,
+4,Specimen4,4,C7,Stagnant_C,12/13/22 16:41,5965,
+4,Specimen4,4,C8,No Vit.Min._C,12/13/22 16:43,37069,
+4,Specimen4,4,D1,Control_D,12/13/22 16:46,77.2,
+4,Specimen4,4,D2,pH 6_D,12/13/22 16:48,61.8,
+4,Specimen4,4,D3,pH 7.4_D,12/13/22 16:51,54.8,
+4,Specimen4,4,D4,15C_D,12/13/22 16:53,47.7,
+4,Specimen4,4,D5,30C_D,12/13/22 16:55,52.1,
+4,Specimen4,4,D6,High Iron_D,12/13/22 16:58,54.6,
+4,Specimen4,4,D7,Stagnant_D,12/13/22 17:00,47.5,
+4,Specimen4,4,D8,No Vit.Min._D,12/13/22 17:02,861,
+5,Specimen5,5,A1,Control_A,12/14/22 16:48,29276,
+5,Specimen5,5,A2,pH 6_A,12/14/22 16:50,35387,
+5,Specimen5,5,A3,pH 7.4_A,12/14/22 16:53,21420,
+5,Specimen5,5,A4,15C_A,12/14/22 16:55,31622,
+5,Specimen5,5,A5,30C_A,12/14/22 16:57,44640,
+5,Specimen5,5,A6,High Iron_A,12/14/22 17:00,39536,
+5,Specimen5,5,A7,Stagnant_A,12/14/22 17:02,7105,
+5,Specimen5,5,A8,No Vit.Min._A,12/14/22 17:04,25385,
+5,Specimen5,5,B1,Control_B,12/14/22 17:06,37980,
+5,Specimen5,5,B2,pH 6_B,12/14/22 17:09,36185,
+5,Specimen5,5,B3,pH 7.4_B,12/14/22 17:11,30390,
+5,Specimen5,5,B4,15C_B,12/14/22 17:13,29630,
+5,Specimen5,5,B5,30C_B,12/14/22 17:16,44938,
+5,Specimen5,5,B6,High Iron_B,12/14/22 17:18,40703,
+5,Specimen5,5,B7,Stagnant_B,12/14/22 17:21,7634,
+5,Specimen5,5,B8,No Vit.Min._B,12/14/22 17:23,41099,
+5,Specimen5,5,C1,Control_C,12/14/22 17:25,31455,
+5,Specimen5,5,C2,pH 6_C,12/14/22 17:28,36037,
+5,Specimen5,5,C3,pH 7.4_C,12/14/22 17:30,24638,
+5,Specimen5,5,C4,15C_C,12/14/22 17:33,27843,
+5,Specimen5,5,C5,30C_C,12/14/22 17:35,44913,
+5,Specimen5,5,C6,High Iron_C,12/14/22 17:37,43814,
+5,Specimen5,5,C7,Stagnant_C,12/14/22 17:40,28327,skip
+5,Specimen5,5,C8,No Vit.Min._C,12/14/22 17:42,40125,
+5,Specimen5,5,D1,Control_D,12/14/22 17:44,172,
+5,Specimen5,5,D2,pH 6_D,12/14/22 17:47,35.6,
+5,Specimen5,5,D3,pH 7.4_D,12/14/22 17:49,30.8,
+5,Specimen5,5,D4,15C_D,12/14/22 17:52,20.7,
+5,Specimen5,5,D5,30C_D,12/14/22 17:54,15.8,
+5,Specimen5,5,D6,High Iron_D,12/14/22 17:56,11,
+5,Specimen5,5,D7,Stagnant_D,12/14/22 17:59,344,
+5,Specimen5,5,D8,No Vit.Min._D,12/14/22 18:01,5762,
+6,Specimen6,6,A1,Control_A,12/15/22 17:02,30728,
+6,Specimen6,6,A2,pH 6_A,12/15/22 17:04,35998,
+6,Specimen6,6,A3,pH 7.4_A,12/15/22 17:07,22195,
+6,Specimen6,6,A4,15C_A,12/15/22 17:09,28377,
+6,Specimen6,6,A5,30C_A,12/15/22 17:11,45954,
+6,Specimen6,6,A6,High Iron_A,12/15/22 17:13,42727,
+6,Specimen6,6,A7,Stagnant_A,12/15/22 17:16,10422,
+6,Specimen6,6,A8,No Vit.Min._A,12/15/22 17:18,26851,
+6,Specimen6,6,B1,Control_B,12/15/22 17:20,36497,
+6,Specimen6,6,B2,pH 6_B,12/15/22 17:23,38130,
+6,Specimen6,6,B3,pH 7.4_B,12/15/22 17:25,31019,
+6,Specimen6,6,B4,15C_B,12/15/22 17:27,26142,
+6,Specimen6,6,B5,30C_B,12/15/22 17:30,46167,
+6,Specimen6,6,B6,High Iron_B,12/15/22 17:32,40759,
+6,Specimen6,6,B7,Stagnant_B,12/15/22 17:35,10994,
+6,Specimen6,6,B8,No Vit.Min._B,12/15/22 17:37,42465,
+6,Specimen6,6,C1,Control_C,12/15/22 17:39,33032,
+6,Specimen6,6,C2,pH 6_C,12/15/22 17:41,36823,
+6,Specimen6,6,C3,pH 7.4_C,12/15/22 17:44,23001,
+6,Specimen6,6,C4,15C_C,12/15/22 17:46,29864,
+6,Specimen6,6,C5,30C_C,12/15/22 17:49,46050,
+6,Specimen6,6,C6,High Iron_C,12/15/22 17:51,43699,
+6,Specimen6,6,C7,Stagnant_C,12/15/22 17:53,15563,
+6,Specimen6,6,C8,No Vit.Min._C,12/15/22 17:56,43700,
+6,Specimen6,6,D1,Control_D,12/15/22 17:58,71.5,
+6,Specimen6,6,D2,pH 6_D,12/15/22 18:01,46.4,
+6,Specimen6,6,D3,pH 7.4_D,12/15/22 18:03,24.9,
+6,Specimen6,6,D4,15C_D,12/15/22 18:05,25.7,
+6,Specimen6,6,D5,30C_D,12/15/22 18:08,20.7,
+6,Specimen6,6,D6,High Iron_D,12/15/22 18:10,17.8,
+6,Specimen6,6,D7,Stagnant_D,12/15/22 18:12,573,
+6,Specimen6,6,D8,No Vit.Min._D,12/15/22 18:15,6079,
+7,Specimen7,7,A1,Control_A,12/16/22 14:42,31749,
+7,Specimen7,7,A2,pH 6_A,12/16/22 14:44,36050,
+7,Specimen7,7,A3,pH 7.4_A,12/16/22 14:47,17637,
+7,Specimen7,7,A4,15C_A,12/16/22 14:49,22500,
+7,Specimen7,7,A5,30C_A,12/16/22 14:52,44517,
+7,Specimen7,7,A6,High Iron_A,12/16/22 14:54,43752,
+7,Specimen7,7,A7,Stagnant_A,12/16/22 14:56,11697,
+7,Specimen7,7,A8,No Vit.Min._A,12/16/22 14:59,28705,
+7,Specimen7,7,B1,Control_B,12/16/22 15:01,35396,
+7,Specimen7,7,B2,pH 6_B,12/16/22 15:04,36743,
+7,Specimen7,7,B3,pH 7.4_B,12/16/22 15:06,28937,
+7,Specimen7,7,B4,15C_B,12/16/22 15:08,24009,
+7,Specimen7,7,B5,30C_B,12/16/22 15:11,43221,
+7,Specimen7,7,B6,High Iron_B,12/16/22 15:13,40733,
+7,Specimen7,7,B7,Stagnant_B,12/16/22 15:16,13789,
+7,Specimen7,7,B8,No Vit.Min._B,12/16/22 15:18,41739,
+7,Specimen7,7,C1,Control_C,12/16/22 15:20,32565,
+7,Specimen7,7,C2,pH 6_C,12/16/22 15:23,36123,
+7,Specimen7,7,C3,pH 7.4_C,12/16/22 15:25,24484,
+7,Specimen7,7,C4,15C_C,12/16/22 15:28,23836,
+7,Specimen7,7,C5,30C_C,12/16/22 15:30,41908,
+7,Specimen7,7,C6,High Iron_C,12/16/22 15:32,42721,
+7,Specimen7,7,C7,Stagnant_C,12/16/22 15:35,21276,skip
+7,Specimen7,7,C8,No Vit.Min._C,12/16/22 15:37,42692,
+7,Specimen7,7,D1,Control_D,12/16/22 15:39,326,
+7,Specimen7,7,D2,pH 6_D,12/16/22 15:42,245,
+7,Specimen7,7,D3,pH 7.4_D,12/16/22 15:44,295,
+7,Specimen7,7,D4,15C_D,12/16/22 15:46,358,
+7,Specimen7,7,D5,30C_D,12/16/22 15:49,297,
+7,Specimen7,7,D6,High Iron_D,12/16/22 15:51,406,
+7,Specimen7,7,D7,Stagnant_D,12/16/22 15:54,1179,
+7,Specimen7,7,D8,No Vit.Min._D,12/16/22 15:56,6791,
+8,Specimen8,8,A1,Control_A,12/18/22 12:11,31228,
+8,Specimen8,8,A2,pH 6_A,12/18/22 12:13,35713,
+8,Specimen8,8,A3,pH 7.4_A,12/18/22 12:16,20223,
+8,Specimen8,8,A4,15C_A,12/18/22 12:18,19707,
+8,Specimen8,8,A5,30C_A,12/18/22 12:20,43649,
+8,Specimen8,8,A6,High Iron_A,12/18/22 12:23,41985,
+8,Specimen8,8,A7,Stagnant_A,12/18/22 12:25,24429,
+8,Specimen8,8,A8,No Vit.Min._A,12/18/22 12:27,25470,
+8,Specimen8,8,B1,Control_B,12/18/22 12:30,33281,
+8,Specimen8,8,B2,pH 6_B,12/18/22 12:32,39054,
+8,Specimen8,8,B3,pH 7.4_B,12/18/22 12:35,26455,
+8,Specimen8,8,B4,15C_B,12/18/22 12:37,20849,
+8,Specimen8,8,B5,30C_B,12/18/22 12:39,45421,
+8,Specimen8,8,B6,High Iron_B,12/18/22 12:42,41921,
+8,Specimen8,8,B7,Stagnant_B,12/18/22 12:44,23281,
+8,Specimen8,8,B8,No Vit.Min._B,12/18/22 12:47,36099,
+8,Specimen8,8,C1,Control_C,12/18/22 12:49,29476,
+8,Specimen8,8,C2,pH 6_C,12/18/22 12:51,36921,
+8,Specimen8,8,C3,pH 7.4_C,12/18/22 12:54,21820,
+8,Specimen8,8,C4,15C_C,12/18/22 12:56,20096,
+8,Specimen8,8,C5,30C_C,12/18/22 12:59,42216,
+8,Specimen8,8,C6,High Iron_C,12/18/22 13:01,38179,
+8,Specimen8,8,C7,Stagnant_C,12/18/22 13:04,22953,
+8,Specimen8,8,C8,No Vit.Min._C,12/18/22 13:06,34761,
+8,Specimen8,8,D1,Control_D,12/18/22 13:09,27.1,
+8,Specimen8,8,D2,pH 6_D,12/18/22 13:11,12.5,
+8,Specimen8,8,D3,pH 7.4_D,12/18/22 13:13,7.48,
+8,Specimen8,8,D4,15C_D,12/18/22 13:16,628,
+8,Specimen8,8,D5,30C_D,12/18/22 13:18,2276,
+8,Specimen8,8,D6,High Iron_D,12/18/22 13:20,7.26,
+8,Specimen8,8,D7,Stagnant_D,12/18/22 13:23,35.4,
+8,Specimen8,8,D8,No Vit.Min._D,12/18/22 13:25,5.5,
