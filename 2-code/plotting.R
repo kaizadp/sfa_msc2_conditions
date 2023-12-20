@@ -29,7 +29,7 @@ co2_summary %>%
 
 # plot only 94, 163 hr
 co2_summary %>% 
-  filter(Hours %in% c("94", "163")) %>% 
+  filter(Hours %in% c("96", "168")) %>% 
   mutate(mean_co2 = round(mean_co2)) %>% 
   ggplot(aes(x = Hours, y = Condition, fill = mean_co2))+
   geom_tile(alpha = 0.8, color = "black")+
