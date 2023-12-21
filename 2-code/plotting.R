@@ -104,6 +104,10 @@ co2_comparisons_nag = plot_co2_comparison_heatmap(co2_summary_full %>% filter(su
 co2_comparisons_trehalose = plot_co2_comparison_heatmap(co2_summary_full %>% filter(substrate == "Trehalose"))
 
 #ggsave("3-images/figures_2023-10-20/co2_heatmap_comparisons.png")
+ggsave("3-images/figures_2023-12-21/compar_Chitin.png",width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/compar_CMC.png", width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/compar_NAG.png", width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/compar_Tre.png", width = 10, height = 8)
 
 
 #

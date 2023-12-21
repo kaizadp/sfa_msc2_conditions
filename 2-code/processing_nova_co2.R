@@ -108,13 +108,14 @@ plot_co2 = function(co2_samples){
     facet_wrap(~substrate, scales = "free_y")+
     labs(title = "CO2",
          #subtitle = "Figure 1",
-         x = "Time, hours",
+         x = "Time, (hours)",
          y = "CO2, ppm")+
     scale_fill_brewer(palette = "Paired", drop = F)+
     scale_color_brewer(palette = "Paired", drop = F)+
-    theme(#axis.title = element_text(size = 14),
-          #axis.text = element_text(size = 14),
-          #strip.text = element_text(size = 14)
+    theme(axis.title = element_text(size = 22),
+          axis.text = element_text(size = 22),
+          strip.text = element_text(size = 22),
+          legend.text = element_text(size = 14)
           )
   
 }
@@ -128,7 +129,10 @@ gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG")) +
   annotate("text", label = "NA", x = 1, y = 20000, size = 8)
 gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
 
-
+ggsave("3-images/figures_2023-12-21/co2_Chitin.png", width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/co2_CMC.png", width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/co2_NAG.png", width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/co2_Tre.png", width = 10, height = 8)
 
 ### #gg_co2_chitin_bl_corr <- 
 ### co2_samples |> 
@@ -202,16 +206,21 @@ plot_nova = function(nova_samples){
   stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
   # if you want to plot the actual data points, use this line below: 
   # geom_point(color = "black", position = position_dodge(width = 0.9))+
-  labs(title = "Biomass collection",
-       #subtitle = "Figure 2",
-       x = "Time, hours",
-       y = "Cell counts")+
-  scale_y_continuous(labels = scales::comma)+
-  scale_fill_brewer(palette = "Paired")+
-  facet_wrap(~substrate, scales = "free_y")+
-    theme(axis.title = element_text(size = 14),
-          axis.text = element_text(size = 14),
-          strip.text = element_text(size = 14))
+    expand_limits(x = 0)+
+    scale_x_discrete(drop = F)+
+    scale_y_continuous(labels = scales::comma)+
+    facet_wrap(~substrate, scales = "free_y")+
+    labs(title = "Biomass collection",
+         #subtitle = "Figure 2",
+         x = "Time, (hours)",
+         y = "Cell counts")+
+    scale_fill_brewer(palette = "Paired", drop = F)+
+    scale_color_brewer(palette = "Paired", drop = F)+
+    theme(axis.title = element_text(size = 22),
+      axis.text = element_text(size = 22),
+      strip.text = element_text(size = 22),
+      legend.text = element_text(size = 14)
+    )
 }
 
 gg_nova_all = plot_nova(nova_samples)
@@ -220,4 +229,10 @@ gg_nova_chitin = plot_nova(nova_samples %>% filter(substrate == "Chitin"))
 gg_nova_CMC = plot_nova(nova_samples %>% filter(substrate == "CMC"))
 gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
 gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
+
+
+ggsave("3-images/figures_2023-12-21/Nova_Chitin.png",width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/Nova_CMC.png", width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/Nova_NAG.png", width = 10, height = 8)
+ggsave("3-images/figures_2023-12-21/Nova_Tre.png", width = 10, height = 8)
 
