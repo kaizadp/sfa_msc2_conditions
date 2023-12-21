@@ -110,8 +110,8 @@ plot_co2 = function(co2_samples){
          #subtitle = "Figure 1",
          x = "Time, hours",
          y = "CO2, ppm")+
-    scale_fill_brewer(palette = "Paired")+
-    scale_color_brewer(palette = "Paired")+
+    scale_fill_brewer(palette = "Paired", drop = F)+
+    scale_color_brewer(palette = "Paired", drop = F)+
     theme(#axis.title = element_text(size = 14),
           #axis.text = element_text(size = 14),
           #strip.text = element_text(size = 14)
