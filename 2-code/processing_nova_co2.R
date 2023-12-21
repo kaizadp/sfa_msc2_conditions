@@ -203,7 +203,7 @@ plot_nova = function(nova_samples){
   # if you want to plot the actual data points, use this line below: 
   # geom_point(color = "black", position = position_dodge(width = 0.9))+
   labs(title = "Biomass collection",
-       subtitle = "Figure 2",
+       #subtitle = "Figure 2",
        x = "Time, hours",
        y = "Cell counts")+
   scale_y_continuous(labels = scales::comma)+
