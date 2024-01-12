@@ -44,8 +44,8 @@ fit_dunnett_co2 <- function(dat) {
   
 }
 co2_dunnett = 
-  co2_samples %>% 
-  group_by(substrate, Hours) %>% 
+  co2_samples %>%
+  group_by(substrate, Hours) %>%
   do(fit_dunnett_co2(.))
 
 # now plot the bar graph, but with the Dunnett asterisks
@@ -65,8 +65,8 @@ plot_co2_dunnett = function(co2_samples, co2_dunnett){
     facet_wrap(~substrate, scales = "free_y")+
     labs(title = "CO2",
          #subtitle = "Figure 1",
-         x = "Time, (hours)",
-         y = "CO2, ppm")+
+         x = "Time (hours)",
+         y = "CO2 (ppm)")+
     geom_text(data = co2_dunnett, 
               aes(label = asterisk, y = y, group = Condition, color = Condition,
                   ), 
@@ -91,51 +91,90 @@ gg_co2_trehalose = plot_co2_dunnett(co2_samples %>% filter(substrate == "Trehalo
 
 
 
+##Nova_STATS
 
+fit_dunnett_nova <- function(dat) {
+  
+  # the dunnett test is being calculated to determine significant differences from the control
+  # and we will plot this in the bar graph
+  # where significant, it will be denoted with an asterisk in the plot
+  
+  d <-DescTools::DunnettTest(Absorbance ~ Condition, control = "Control", 
+                             data = dat)
+  
+  # create a dataframe and then clean up
+  # create a new column "asterisk" that will have an asterisk for significant differences
+  dunnett = d$Control %>% 
+    as.data.frame() %>% 
+    rownames_to_column("Condition") %>% 
+    mutate(pval = round(pval, 3),
+           Condition = str_remove(Condition, "-Control"),
+           asterisk = case_when(pval <= 0.05 ~ "*")) %>% 
+    dplyr::select(Condition, pval, asterisk)
+  
+  # next, we need to determine the y-axis position for the asterisks
+  # the bar heights are highly variable, so we customize it
+  # we will set the position as 10% above the maximum value for each bar
+  height = 
+    dat %>% 
+    group_by(Condition) %>% 
+    dplyr::summarise(max = max(Absorbance),
+                     y = max + (0.10 * max))
+  
+  # now, combine both dataframes
+  # and order the conditions
+  height %>% 
+    left_join(dunnett) %>% 
+    order_conditions()
+  
+}
+nova_dunnett = 
+  nova_samples %>%
+  group_by(substrate, Hours) %>%
+  do(fit_dunnett_nova(.))
 
-
-
-## delete everything below ----
-
-# blanks <- dplyr::filter(nova_processed, Hours == 0)|>
-#   dplyr::select(substrate, Condition, Replicate, Hours, Absorbance)
-# 
-final <- dplyr::filter(nova_processed, Hours == 96)|>
-  dplyr::select(substrate, Condition, Replicate, Hours, Absorbance)
-
-ggplot(final, aes(Condition, Absorbance, fill = substrate))+
-  geom_col(position = "dodge")
-
-
-stats_function <- function(sub){
-  df <- dplyr::filter(final, substrate == sub)
-  anova <- aov(Absorbance ~ Condition, data = df)
-  broom::tidy(TukeyHSD(anova))
+# now plot the bar graph, but with the Dunnett asterisks
+# modifying the function from `processing_nova_co2.R` script
+plot_nova_dunnett = function(nova_samples, nova_dunnett){
+  #gg_co2_chitin_no_corr <- 
+  nova_samples |> 
+    #filter(substrate == "CMC") %>% 
+    ggplot(aes(x = Hours, y = Absorbance, fill = Condition))+
+    stat_summary(geom = "bar", position = "dodge")+
+    stat_summary(geom = "errorbar", position = "dodge", color = "grey40")+
+    # if you want to plot the actual data points, use this line below: 
+    # geom_point(color = "black", position = position_dodge(width = 0.9))+
+    expand_limits(x = 0)+
+    scale_x_discrete(drop = F)+
+    scale_y_continuous(labels = scales::comma)+
+    facet_wrap(~substrate, scales = "free_y")+
+    labs(title = "Biomass",
+         #subtitle = "Figure 1",
+         x = "Time (hours)",
+         y = "Cell Counts")+
+    geom_text(data = nova_dunnett, 
+              aes(label = asterisk, y = y, group = Condition, color = Condition,
+              ), 
+              position = position_dodge(width = 0.9), size = 10)+
+    scale_fill_brewer(palette = "Paired", drop = F)+
+    scale_color_brewer(palette = "Paired", drop = F)+
+    theme(axis.title = element_text(size = 22),
+          axis.text = element_text(size = 22),
+          strip.text = element_text(size = 22),
+          legend.text = element_text(size = 14)
+    )
+  
 }
 
-chitin_stats <- stats_function("Chitin") 
-nag_stats <- stats_function("NAG")
-tre_stats <- stats_function("Trehalose")
-cmc_stats <- stats_function("CMC")
+gg_nova_cmc = plot_nova_dunnett(nova_samples %>% filter(substrate == "CMC"), nova_dunnett %>% filter(substrate == "CMC"))
+gg_nova_chitin = plot_nova_dunnett(nova_samples %>% filter(substrate == "Chitin"), nova_dunnett %>% filter(substrate == "Chitin"))
+gg_nova_nag = plot_nova_dunnett(nova_samples %>% filter(substrate == "NAG"), nova_dunnett %>% filter(substrate == "NAG"))
+gg_nova_trehalose = plot_nova_dunnett(nova_samples %>% filter(substrate == "Trehalose"), nova_dunnett %>% filter(substrate == "Trehalose"))
 
 
 
 
-co2_data <- dplyr::filter(co2_processed, Hours == 96)|>
-  dplyr::select(substrate, Condition, Replicate, Hours, co2_ppm)
-
-ggplot(final, aes(Condition, co2_ppm, fill = substrate))+
-  geom_col(position = "dodge")
 
 
-co2_stats_function <- function(sub){
-  df <- dplyr::filter(co2_data, substrate == sub)
-  anova <- aov(co2_ppm ~ Condition, data = df)
-  broom::tidy(TukeyHSD(anova))
-}
 
-chitin_co2_stats <- co2_stats_function("Chitin") 
-nag_co2_stats <- co2_stats_function("NAG")
-tre_co2_stats <- co2_stats_function("Trehalose")
-cmc_co2_stats <- co2_stats_function("CMC")
 

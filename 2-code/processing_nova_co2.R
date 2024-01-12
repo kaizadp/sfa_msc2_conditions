@@ -129,10 +129,10 @@ gg_co2_NAG = plot_co2(co2_samples %>% filter(substrate == "NAG")) +
   annotate("text", label = "NA", x = 1, y = 20000, size = 8)
 gg_co2_trehalose = plot_co2(co2_samples %>% filter(substrate == "Trehalose"))
 
-ggsave("3-images/figures_2023-12-21/co2_Chitin.png", width = 10, height = 8)
-ggsave("3-images/figures_2023-12-21/co2_CMC.png", width = 10, height = 8)
-ggsave("3-images/figures_2023-12-21/co2_NAG.png", width = 10, height = 8)
-ggsave("3-images/figures_2023-12-21/co2_Tre.png", width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/co2_Chitin.png", width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/co2_CMC.png", width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/co2_NAG.png", width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/co2_Tre.png", width = 10, height = 8)
 
 ### #gg_co2_chitin_bl_corr <- 
 ### co2_samples |> 
@@ -231,8 +231,8 @@ gg_nova_NAG = plot_nova(nova_samples %>% filter(substrate == "NAG"))
 gg_nova_trehalose = plot_nova(nova_samples %>% filter(substrate == "Trehalose"))
 
 
-ggsave("3-images/figures_2023-12-21/Nova_Chitin.png",width = 10, height = 8)
-ggsave("3-images/figures_2023-12-21/Nova_CMC.png", width = 10, height = 8)
-ggsave("3-images/figures_2023-12-21/Nova_NAG.png", width = 10, height = 8)
-ggsave("3-images/figures_2023-12-21/Nova_Tre.png", width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/Nova_Chitin.png",width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/Nova_CMC.png", width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/Nova_NAG.png", width = 10, height = 8)
+#ggsave("3-images/figures_2023-12-21/Nova_Tre.png", width = 10, height = 8)
 
