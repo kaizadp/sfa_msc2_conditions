@@ -119,7 +119,11 @@ fit_dunnett_nova <- function(dat) {
     dat %>% 
     group_by(Condition) %>% 
     dplyr::summarise(max = max(Absorbance),
-                     y = max + (0.10 * max))
+                     offset = case_when(substrate == "CMC" ~ 200,
+                                        substrate == "Chitin" ~ 200,
+                                        substrate == "NAG" ~ 2000,
+                                        substrate == "Trehalose" ~ 2000),
+                     y = offset + max)
   
   # now, combine both dataframes
   # and order the conditions
